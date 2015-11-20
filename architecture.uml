@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1052.0" y="1307.0">com</node>
+    <node x="357.56025641025633" y="1211.0">AccessManager</node>
+    <node x="404.71089743589744" y="0.0">Infraction</node>
+    <node x="193.0" y="1307.0">netscape</node>
+    <node x="617.7615384615384" y="954.0">LiveInput</node>
+    <node x="141.7294871794872" y="732.5">PlayerAnalysis</node>
+    <node x="369.56025641025633" y="1066.0">ScoreKeeper</node>
+    <node x="876.75" y="0.0">toolbarButtonGraphics</node>
+    <node x="1368.0" y="1307.0">sun</node>
+    <node x="277.0" y="943.0">BatchInput</node>
+    <node x="525.75" y="633.0">Match</node>
+    <node x="721.0" y="1307.0">apple</node>
+    <node x="1211.0" y="1307.0">java</node>
+    <node x="887.0" y="1307.0">javax</node>
+    <node x="395.88461538461536" y="378.0">Team</node>
+    <node x="381.0" y="1307.0">javafx</node>
+    <node x="229.71089743589744" y="0.0">ShotOnGoal</node>
+    <node x="283.58589743589744" y="145.0">Player</node>
+    <node x="551.0" y="1307.0">oracle</node>
+    <node x="0.0" y="1381.0">org</node>
+    <node x="0.0" y="1307.0">resources</node>
+    <node x="153.0" y="1381.0">jdk</node>
+    <node x="1149.75" y="0.0">META-INF</node>
+    <node x="0.0" y="943.0">AnalysisViewer</node>
+    <node x="369.75" y="732.5">LeagueAnalysis</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="LeagueAnalysis" target="Team">
+      <point x="-34.0" y="-25.5" />
+      <point x="403.75" y="608.0" />
+      <point x="438.88461538461536" y="608.0" />
+      <point x="-86.0" y="102.5" />
+    </edge>
+    <edge source="Match" target="Team">
+      <point x="0.0" y="-125.0" />
+      <point x="678.75" y="608.0" />
+      <point x="610.8846153846154" y="608.0" />
+      <point x="86.0" y="102.5" />
+    </edge>
+    <edge source="ScoreKeeper" target="BatchInput">
+      <point x="5.6843418860808015E-14" y="-47.5" />
+      <point x="471.0602564102564" y="1046.0" />
+      <point x="437.5" y="1046.0" />
+      <point x="53.5" y="36.5" />
+    </edge>
+    <edge source="BatchInput" target="LeagueAnalysis">
+      <point x="80.25" y="-36.5" />
+      <point x="464.25" y="923.0" />
+      <point x="483.08333333333337" y="923.0" />
+      <point x="45.33333333333337" y="25.5" />
+    </edge>
+    <edge source="AnalysisViewer" target="LeagueAnalysis">
+      <point x="64.25" y="-36.5" />
+      <point x="192.75" y="923.0" />
+      <point x="392.4166666666667" y="923.0" />
+      <point x="-45.333333333333314" y="25.5" />
+    </edge>
+    <edge source="Player" target="Infraction">
+      <point x="30.875" y="-91.5" />
+      <point x="437.96089743589744" y="120.0" />
+      <point x="451.71089743589744" y="120.0" />
+      <point x="-47.0" y="47.5" />
+    </edge>
+    <edge source="Player" target="ShotOnGoal">
+      <point x="-92.625" y="-91.5" />
+      <point x="314.46089743589744" y="120.0" />
+      <point x="268.46089743589744" y="120.0" />
+      <point x="-38.75" y="47.5" />
+    </edge>
+    <edge source="BatchInput" target="PlayerAnalysis">
+      <point x="-26.75" y="-36.5" />
+      <point x="357.25" y="903.0" />
+      <point x="263.3961538461539" y="903.0" />
+      <point x="48.666666666666686" y="25.5" />
+    </edge>
+    <edge source="ScoreKeeper" target="AnalysisViewer">
+      <point x="-81.19999999999987" y="-47.5" />
+      <point x="389.86025641025645" y="1046.0" />
+      <point x="128.5" y="1046.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="Team" target="Player">
+      <point x="64.5" y="-102.5" />
+      <point x="589.3846153846154" y="353.0" />
+      <point x="489.41923076923075" y="353.0" />
+      <point x="82.33333333333331" y="91.5" />
+    </edge>
+    <edge source="LiveInput" target="Match">
+      <point x="33.25" y="-25.5" />
+      <point x="717.5115384615384" y="923.0" />
+      <point x="755.25" y="923.0" />
+      <point x="76.5" y="125.0" />
+    </edge>
+    <edge source="ScoreKeeper" target="LiveInput">
+      <point x="81.2000000000001" y="-47.5" />
+      <point x="552.2602564102565" y="1046.0" />
+      <point x="717.5115384615384" y="1046.0" />
+      <point x="33.25" y="25.5" />
+    </edge>
+    <edge source="AccessManager" target="ScoreKeeper">
+      <point x="56.75000000000006" y="-25.5" />
+      <point x="527.8102564102563" y="1186.0" />
+      <point x="521.8102564102564" y="1186.0" />
+      <point x="50.75000000000006" y="47.5" />
+    </edge>
+    <edge source="PlayerAnalysis" target="Player">
+      <point x="0.0" y="-25.5" />
+      <point x="214.7294871794872" y="353.0" />
+      <point x="324.7525641025641" y="353.0" />
+      <point x="-82.33333333333331" y="91.5" />
+    </edge>
+    <edge source="AnalysisViewer" target="PlayerAnalysis">
+      <point x="-64.25" y="-36.5" />
+      <point x="64.25" y="923.0" />
+      <point x="166.06282051282054" y="923.0" />
+      <point x="-48.66666666666666" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5398601398601398" x="739.0" y="705.0000000000001" />
+  <SelectedNodes>
+    <node>com</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
