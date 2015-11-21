@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.SocScore.framework</OriginalElement>
+  <nodes>
+    <node x="42.0" y="1290.5">com.SocScore.framework.ScoreKeeper</node>
+    <node x="326.5" y="0.0">com.SocScore.framework.data.ShotOnGoal</node>
+    <node x="355.0" y="1580.0">com.SocScore.framework.LiveInput</node>
+    <node x="0.0" y="900.5">com.SocScore.framework.AnalysisViewer</node>
+    <node x="159.12254901960785" y="1657.5">com.SocScore.framework.BatchInput</node>
+    <node x="693.0" y="1591.0">com.SocScore.framework.data.LeagueAnalysis</node>
+    <node x="409.0" y="1190.0">com.SocScore.framework.data.Match</node>
+    <node x="603.5" y="0.0">com.SocScore.framework.data.Infraction</node>
+    <node x="40.53063725490199" y="1814.0">com.SocScore.framework.AccessManager</node>
+    <node x="359.0" y="190.0">com.SocScore.framework.data.Player</node>
+    <node x="390.6139705882353" y="690.0">com.SocScore.framework.data.Team</node>
+    <node x="879.6139705882354" y="856.0">com.SocScore.framework.data.PlayerAnalysis</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.SocScore.framework.data.LeagueAnalysis" target="com.SocScore.framework.data.Team">
+      <point x="70.25" y="-81.0" />
+      <point x="903.75" y="1165.0" />
+      <point x="781.4473039215686" y="1165.0" />
+      <point x="156.33333333333337" y="225.0" />
+    </edge>
+    <edge source="com.SocScore.framework.BatchInput" target="com.SocScore.framework.ScoreKeeper">
+      <point x="0.0" y="-14.5" />
+      <point x="208.62254901960785" y="1555.0" />
+      <point x="215.5" y="1555.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Team" target="com.SocScore.framework.data.Player">
+      <point x="0.0" y="-225.0" />
+      <point x="625.1139705882354" y="665.0" />
+      <point x="593.5" y="665.0" />
+      <point x="0.0" y="225.0" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Match" target="com.SocScore.framework.data.Team">
+      <point x="0.0" y="-170.0" />
+      <point x="593.5" y="1165.0" />
+      <point x="625.1139705882354" y="1165.0" />
+      <point x="2.8421709430404007E-14" y="225.0" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Player" target="com.SocScore.framework.data.Infraction">
+      <point x="58.625" y="-225.0" />
+      <point x="652.125" y="165.0" />
+      <point x="667.75" y="165.0" />
+      <point x="-64.25" y="70.0" />
+    </edge>
+    <edge source="com.SocScore.framework.LiveInput" target="com.SocScore.framework.data.Match">
+      <point x="119.25" y="-92.0" />
+      <point x="633.25" y="1555.0" />
+      <point x="639.625" y="1555.0" />
+      <point x="46.125" y="170.0" />
+    </edge>
+    <edge source="com.SocScore.framework.AccessManager" target="com.SocScore.framework.AnalysisViewer">
+      <point x="-85.125" y="-70.0" />
+      <point x="68.90563725490199" y="1789.0" />
+      <point x="31.5" y="1789.0" />
+      <point x="-31.5" y="14.5" />
+    </edge>
+    <edge source="com.SocScore.framework.ScoreKeeper" target="com.SocScore.framework.data.Player">
+      <point x="0.0" y="-69.5" />
+      <point x="215.5" y="665.0" />
+      <point x="437.16666666666663" y="665.0" />
+      <point x="-156.33333333333337" y="225.0" />
+    </edge>
+    <edge source="com.SocScore.framework.ScoreKeeper" target="com.SocScore.framework.data.Team">
+      <point x="115.66666666666669" y="-69.5" />
+      <point x="331.1666666666667" y="1165.0" />
+      <point x="468.780637254902" y="1165.0" />
+      <point x="-156.33333333333334" y="225.0" />
+    </edge>
+    <edge source="com.SocScore.framework.data.LeagueAnalysis" target="com.SocScore.framework.data.Match">
+      <point x="-70.25" y="-81.0" />
+      <point x="763.25" y="1555.0" />
+      <point x="731.875" y="1555.0" />
+      <point x="138.375" y="170.0" />
+    </edge>
+    <edge source="com.SocScore.framework.AccessManager" target="com.SocScore.framework.ScoreKeeper">
+      <point x="-28.375" y="-70.0" />
+      <point x="125.65563725490199" y="1789.0" />
+      <point x="111.25857843137254" y="1789.0" />
+      <point x="111.25857843137254" y="1555.0" />
+      <point x="99.83333333333331" y="1555.0" />
+      <point x="-115.66666666666669" y="69.5" />
+    </edge>
+    <edge source="com.SocScore.framework.LiveInput" target="com.SocScore.framework.ScoreKeeper">
+      <point x="-119.25" y="-92.0" />
+      <point x="394.75" y="1555.0" />
+      <point x="331.1666666666667" y="1555.0" />
+      <point x="115.66666666666669" y="69.5" />
+    </edge>
+    <edge source="com.SocScore.framework.AccessManager" target="com.SocScore.framework.LiveInput">
+      <point x="85.125" y="-70.0" />
+      <point x="239.155637254902" y="1789.0" />
+      <point x="514.0" y="1789.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="com.SocScore.framework.ScoreKeeper" target="com.SocScore.framework.AnalysisViewer">
+      <point x="-115.66666666666669" y="-69.5" />
+      <point x="99.83333333333331" y="1165.0" />
+      <point x="94.5" y="1165.0" />
+      <point x="31.5" y="14.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Player" target="com.SocScore.framework.data.ShotOnGoal">
+      <point x="-175.875" y="-225.0" />
+      <point x="417.625" y="165.0" />
+      <point x="390.75" y="165.0" />
+      <point x="-64.25" y="70.0" />
+    </edge>
+    <edge source="com.SocScore.framework.data.PlayerAnalysis" target="com.SocScore.framework.data.Player">
+      <point x="0.0" y="-59.0" />
+      <point x="1004.1139705882354" y="665.0" />
+      <point x="749.8333333333334" y="665.0" />
+      <point x="156.33333333333337" y="225.0" />
+    </edge>
+    <edge source="com.SocScore.framework.AccessManager" target="com.SocScore.framework.BatchInput">
+      <point x="28.375" y="-70.0" />
+      <point x="182.405637254902" y="1789.0" />
+      <point x="208.62254901960785" y="1789.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3910840932117528" x="564.5" y="977.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
