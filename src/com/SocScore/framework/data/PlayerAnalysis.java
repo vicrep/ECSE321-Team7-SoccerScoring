@@ -1,6 +1,7 @@
 package com.SocScore.framework.data;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PlayerAnalysis {
@@ -19,6 +20,18 @@ public class PlayerAnalysis {
             if (player.getPLAYER_ID() == ID) return player;
         }
         throw new NullPointerException("Could not find player under provided ID: " + ID);
+    }
+
+    public static void applyRank(PlayerRankType type) {
+        switch(type) {
+            case ID: Collections.sort(PLAYERS, Player.rankByID);
+            case NAME: Collections.sort(PLAYERS, Player.rankByName);
+            case GOALS: Collections.sort(PLAYERS, Player.rankByGoals);
+            case REDCARDS: Collections.sort(PLAYERS, Player.rankByRedCards);
+            case YELLOWCARDS: Collections.sort(PLAYERS, Player.rankByYellowCards);
+            case PENALTY: Collections.sort(PLAYERS, Player.rankByPenalty);
+            default: break;
+        }
     }
 
 }

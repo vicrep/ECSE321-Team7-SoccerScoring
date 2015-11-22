@@ -1,41 +1,51 @@
 package com.SocScore.framework;
 
-import com.SocScore.framework.data.LeagueAnalysis;
+import com.SocScore.framework.data.InfractionType;
+import com.SocScore.framework.data.Match;
 import com.SocScore.framework.data.Player;
 import com.SocScore.framework.data.PlayerAnalysis;
-import com.SocScore.framework.data.Team;
 
-public class ScoreKeeper extends AnalysisViewer {
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-    void removePlayerFromLeague(int playerID) {
+public abstract class ScoreKeeper extends AnalysisViewer {
+    private final List<Match> MATCHES = new ArrayList<>();
+    private Match currentMatch;
+
+    public void selectMatch(int i) {
+        currentMatch = MATCHES.get(i);
+    }
+
+    public List<Match> getMATCHES() {
+        return MATCHES;
+    }
+
+    public void setCurrentMatch(Match match) {
+        this.currentMatch = match;
+    }
+
+    public Match getCurrentMatch() {
+        return currentMatch;
+    }
+
+    public void shoots(int playerID, boolean scored, LocalDateTime time) throws Exception {
         Player player = PlayerAnalysis.findPlayer(playerID);
-        LeagueAnalysis.findTeam(player.getTeamID()).removePlayer(player);
-        PlayerAnalysis.removePlayer(player);
-    }
-
-    void addNewPlayerToTeam(String name, int teamID) {
-        Player newPlayer = new Player(name, teamID);
-        LeagueAnalysis.findTeam(teamID).addPlayer(newPlayer);
-        PlayerAnalysis.addPlayer(newPlayer);
-    }
-
-    void addTeamToLeague(String name) {
-        LeagueAnalysis.addTeam(new Team(name));
-    }
-
-    void removeTeamFromLeague(int teamID) {
-        Team team = LeagueAnalysis.findTeam(teamID);
-        for(Player player : team.getPLAYERS()) {
-            PlayerAnalysis.removePlayer(player);
+        if(getCurrentMatch().playerIsInMatch(player)) {
+            if(scored) {
+                getCurrentMatch().incrementTeamScore(player.getTeamID());
+            }
+            player.shoots(time, scored, getCurrentMatch().getMATCH_ID());
         }
-        LeagueAnalysis.removeTeam(team);
+        else throw new RuntimeException("Cannot add a goal from a player who isn't currently in the match");
     }
 
-    void transferPlayer(int playerID, int oldTeamID, int newTeamID) {
+    public void addInfraction(int playerID, InfractionType type, LocalDateTime time) {
         Player player = PlayerAnalysis.findPlayer(playerID);
-        LeagueAnalysis.findTeam(oldTeamID).removePlayer(player);
-        LeagueAnalysis.findTeam(newTeamID).addPlayer(player);
+        if(getCurrentMatch().playerIsInMatch(player)) {
+            player.commitsInfraction(type, time, getCurrentMatch().getMATCH_ID());
+        }
+        else throw new RuntimeException("Cannot add an infraction to a player who isn't currently in the match");
     }
-
 
 }

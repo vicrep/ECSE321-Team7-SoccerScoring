@@ -4,6 +4,9 @@ public class AccessManager {
 
     private static boolean isAuth = false;
     static final int PIN = 1234;
+    static final AnalysisViewer leagueInput = new LeagueInput();
+    static final AnalysisViewer liveInput = new LiveInput();
+    static final AnalysisViewer batchInput = new BatchInput();
 
     static public boolean authenticate(int input) {
         if(PIN == input) isAuth = true;
@@ -18,13 +21,13 @@ public class AccessManager {
         else throw new RuntimeException("User is already unauthenticated");
     }
 
-    public static AnalysisViewer setInputType(char type) throws Exception {
+    public static AnalysisViewer setInputType(ScoreKeeperType type) {
         if(!isAuth) throw new RuntimeException("User is not authorized as a ScoreKeeper");
         switch(type) {
-            case 's': return new ScoreKeeper();
-            case 'l': return new LiveInput();
-            case 'b': return new BatchInput();
+            case LEAGUE_INPUT: return leagueInput;
+            case LIVE_INPUT: return liveInput;
+            case BATCH_INPUT: return batchInput;
+            default: return null;
         }
-        throw new Exception("Invalid ScoreKeeper type selected: " + type);
     }
 }

@@ -1,5 +1,6 @@
 package com.SocScore.framework.data;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -16,6 +17,48 @@ public class Team {
     private int teamScore = 0;
     private int totalGoalsScored = 0;
     private String name;
+
+    //Constructor
+    public Team(String name) {
+        this.name = name;
+    }
+
+    //Methods
+    public void addPlayer(Player player) {
+        PLAYERS.add(player);
+    }
+
+    public void removePlayer(Player player) {
+        PLAYERS.remove(player);
+    }
+
+    public void startMatch() throws Exception {
+        if(PLAYERS.size() < 11) throw new Exception("Teams must have at least 11 players to start a match");
+        PLAYERS.forEach(Player::startMatch);
+    }
+
+    public void endMatch(int winnerID, int goals) {
+        if(winnerID == TEAM_ID) numOfVictories++;
+        else if(winnerID == -1) numOfDraws++;
+        else numOfLosses++;
+
+        PLAYERS.forEach(Player::endMatch);
+        updateTeamScore();
+        totalGoalsScored += goals;
+    }
+
+    private void updateTeamScore() {
+        teamScore = (3*numOfVictories) + numOfDraws;
+        numOfMatchesPlayed = numOfVictories + numOfDraws + numOfLosses;
+    }
+
+    //comparators (for ranking)
+    public static Comparator<Team> rankByID = (t1, t2) -> t1.getTEAM_ID() - t2.getTEAM_ID();
+
+    public static Comparator<Team> rankByScore = (t1, t2) -> t2.getTeamScore() - t1.getTeamScore();
+
+    public static Comparator<Team> rankByTotalGoals = (t1, t2) -> t2.getTotalGoalsScored() - t1.getTotalGoalsScored();
+
 
 
     //Setters and Getters
@@ -68,41 +111,6 @@ public class Team {
 
     public String getName() {
         return name;
-    }
-
-
-    //Constructor
-    public Team(String name) {
-        this.name = name;
-    }
-
-    //Methods
-    public void addPlayer(Player player) {
-        PLAYERS.add(player);
-    }
-
-    public void removePlayer(Player player) {
-        PLAYERS.remove(player);
-    }
-
-    public void startMatch() throws Exception {
-        if(PLAYERS.size() < 11) throw new Exception("Teams must have at least 11 players to start a match");
-        PLAYERS.forEach(Player::startMatch);
-    }
-
-    public void endMatch(int winnerID, int goals) {
-        if(winnerID == TEAM_ID) numOfVictories++;
-        else if(winnerID == -1) numOfDraws++;
-        else numOfLosses++;
-
-        PLAYERS.forEach(Player::endMatch);
-        updateTeamScore();
-        totalGoalsScored += goals;
-    }
-
-    private void updateTeamScore() {
-        teamScore = (3*numOfVictories) + numOfDraws;
-        numOfMatchesPlayed = numOfVictories + numOfDraws + numOfLosses;
     }
 
 }

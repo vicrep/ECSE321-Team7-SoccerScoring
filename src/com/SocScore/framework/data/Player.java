@@ -1,8 +1,9 @@
 package com.SocScore.framework.data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class Player {
     private static int count = 0;
@@ -24,6 +25,61 @@ public class Player {
     private int currentRed;
     private int currentPenalty;
     private int currentGoals;
+
+    //constructor
+    public Player(String name, int teamID) {
+        this.PLAYER_NAME = name;
+        this.teamID = teamID;
+    }
+
+    //methods
+    public void startMatch() {
+        currentYellow = 0;
+        currentRed = 0;
+        currentPenalty = 0;
+        currentGoals = 0;
+    }
+
+    public void endMatch() {
+        numYellowCards += currentYellow;
+        numRedCards += currentRed;
+        numPenaltyKicks += numPenaltyKicks;
+        numGoalsScored += currentGoals;
+    }
+
+    public void shoots(LocalDateTime time, boolean scored, int MATCH_ID) {
+        if(scored) currentGoals++;
+        SHOTS_ON_GOAL.add(new ShotOnGoal(time, scored, PLAYER_ID, MATCH_ID));
+    }
+
+    public void commitsInfraction(InfractionType type, LocalDateTime time, int matchID) {
+        switch (type) {
+            case YELLOW_CARD:
+                currentYellow++;
+                break;
+            case RED_CARD:
+                currentRed++;
+                break;
+            case PENALTY:
+                currentPenalty++;
+                break;
+            default: break;
+        }
+        INFRACTIONS.add(new Infraction(time, type, PLAYER_ID, matchID));
+    }
+
+    //comparators (for ranking)
+    public static Comparator<Player> rankByID = (p1, p2) -> p1.getPLAYER_ID() - p2.getPLAYER_ID();
+
+    public static Comparator<Player> rankByName = (p1, p2) -> p1.getPLAYER_NAME().compareTo(p2.getPLAYER_NAME());
+
+    public static Comparator<Player> rankByGoals = (p1, p2) -> p1.getNumGoalsScored() - p2.getNumGoalsScored();
+
+    public static Comparator<Player> rankByRedCards = (p1, p2) -> p1.getNumRedCards() - p2.getNumRedCards();
+
+    public static Comparator<Player> rankByYellowCards = (p1, p2) -> p1.getNumYellowCards() - p2.getNumYellowCards();
+
+    public static Comparator<Player> rankByPenalty = (p1, p2) -> p1.getNumPenaltyKicks() - p2.getNumPenaltyKicks();
 
     //setters and getters
     public int getPLAYER_ID() {
@@ -80,47 +136,5 @@ public class Player {
 
     public int getCurrentGoals() {
         return currentGoals;
-    }
-
-    //constructor
-    public Player(String name, int teamID) {
-        this.PLAYER_NAME = name;
-        this.teamID = teamID;
-    }
-
-    //methods
-    public void startMatch() {
-        currentYellow = 0;
-        currentRed = 0;
-        currentPenalty = 0;
-        currentGoals = 0;
-    }
-
-    public void endMatch() {
-        numYellowCards += currentYellow;
-        numRedCards += currentRed;
-        numPenaltyKicks += numPenaltyKicks;
-        numGoalsScored += currentGoals;
-    }
-
-    public void shoots(LocalDateTime time, boolean scored, int MATCH_ID) {
-        if(scored) currentGoals++;
-        SHOTS_ON_GOAL.add(new ShotOnGoal(time, scored, PLAYER_ID, MATCH_ID));
-    }
-
-    public void commitsInfraction(char type, LocalDateTime time, int matchID) throws Exception {
-        switch (type) {
-            case 'y':
-                currentYellow++;
-                break;
-            case 'r':
-                currentRed++;
-                break;
-            case 'p':
-                currentPenalty++;
-                break;
-            default: throw new Exception("invalid infraction type");
-        }
-        INFRACTIONS.add(new Infraction(time, type, PLAYER_ID, matchID));
     }
 }
