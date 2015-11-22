@@ -41,6 +41,10 @@ public class Match {
     public void endMatch(LocalDateTime endTime) throws Exception {
         if (!isActive) throw new Exception("Cannot end a match that hasn't started");
         this.endTime = endTime;
+        updateScore();
+    }
+
+    public void updateScore() {
         if(team1Score<team2Score) {
             winnerTeamID = TEAM2.getTEAM_ID();
         }
@@ -53,6 +57,7 @@ public class Match {
         TEAM1.endMatch(winnerTeamID, team1Score);
         TEAM2.endMatch(winnerTeamID, team2Score);
     }
+
     public void incrementTeamScore(int TEAM_ID) throws Exception {
         if(TEAM1.getTEAM_ID() == TEAM_ID) team1Score++;
         else if(TEAM2.getTEAM_ID() == TEAM_ID) team2Score++;
@@ -76,6 +81,14 @@ public class Match {
     //setters and getters
     public int getMATCH_ID() {
         return MATCH_ID;
+    }
+
+    public Team getTEAM1() {
+        return TEAM1;
+    }
+
+    public Team getTeam2() {
+        return TEAM2;
     }
 
     public int getTeam1Score() {

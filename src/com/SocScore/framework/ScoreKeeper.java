@@ -1,9 +1,6 @@
 package com.SocScore.framework;
 
-import com.SocScore.framework.data.InfractionType;
-import com.SocScore.framework.data.Match;
-import com.SocScore.framework.data.Player;
-import com.SocScore.framework.data.PlayerAnalysis;
+import com.SocScore.framework.data.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -48,4 +45,8 @@ public abstract class ScoreKeeper extends AnalysisViewer {
         else throw new RuntimeException("Cannot add an infraction to a player who isn't currently in the match");
     }
 
+    public void transferMatchToLeague(Match match) {
+        MATCHES.remove(match);
+        LeagueAnalysis.addMatch(match);
+    }
 }

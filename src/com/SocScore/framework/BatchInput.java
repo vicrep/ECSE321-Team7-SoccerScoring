@@ -11,4 +11,14 @@ public class BatchInput extends ScoreKeeper {
         setCurrentMatch(new Match(team1, team2, startTime, endTime));
         getMATCHES().add(getCurrentMatch());
     }
+
+    public void saveMatch() {
+        getCurrentMatch().updateScore();
+    }
+
+    public void addMatchesToLeague() {
+        for(Match match : getMATCHES()) {
+            transferMatchToLeague(match);
+        }
+    }
 }

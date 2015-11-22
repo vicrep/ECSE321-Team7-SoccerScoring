@@ -17,9 +17,7 @@ public class LiveInput extends ScoreKeeper {
 
     public void endMatch() throws Exception {
         getCurrentMatch().endMatch(LocalDateTime.now());
-        getMATCHES().remove(getCurrentMatch());
-        LeagueAnalysis.addMatch(getCurrentMatch());
-        setCurrentMatch(null);
+        transferMatchToLeague(getCurrentMatch());
     }
 
     public void shoots(int playerID, boolean scored) throws Exception {

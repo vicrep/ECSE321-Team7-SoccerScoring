@@ -11,6 +11,10 @@ public class LeagueAnalysis {
         LEAGUE.add(team);
     }
 
+    public static void removeMatch(Match match) {
+        MATCHES.remove(match);
+    }
+
     public static void addMatch(Match match) {
         MATCHES.add(match);
     }
@@ -20,8 +24,8 @@ public class LeagueAnalysis {
     }
 
     public static Team findTeam(int ID) throws RuntimeException {
-        for (Team team : LEAGUE) {
-            if (team.getTEAM_ID() == ID) return team;
+        for(Team team : LEAGUE) {
+            if(team.getTEAM_ID() == ID) return team;
         }
         throw new NullPointerException("Could not find team under provided ID: " + ID);
     }
@@ -33,5 +37,12 @@ public class LeagueAnalysis {
             case TOTAL_GOALS: LEAGUE.sort(Team.rankByTotalGoals);
             default: break;
         }
+    }
+
+    public static Match findMatch(int ID) throws RuntimeException {
+        for (Match match : MATCHES) {
+            if(match.getMATCH_ID() == ID) return match;
+        }
+        throw new NullPointerException("Could not find match under provided ID: " + ID);
     }
 }

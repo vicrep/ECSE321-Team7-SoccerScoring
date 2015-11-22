@@ -1,9 +1,6 @@
 package com.SocScore.framework;
 
-import com.SocScore.framework.data.LeagueAnalysis;
-import com.SocScore.framework.data.Player;
-import com.SocScore.framework.data.PlayerAnalysis;
-import com.SocScore.framework.data.Team;
+import com.SocScore.framework.data.*;
 
 public class LeagueInput extends AnalysisViewer {
 
@@ -38,8 +35,7 @@ public class LeagueInput extends AnalysisViewer {
     }
 
     public void removeMatchFromLeague(int matchID) {
-
+        Match match = LeagueAnalysis.findMatch(matchID);
+        LeagueAnalysis.removeMatch(match);
     }
-
-
 }
