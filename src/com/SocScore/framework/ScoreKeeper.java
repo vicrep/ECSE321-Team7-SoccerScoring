@@ -14,6 +14,30 @@ public abstract class ScoreKeeper extends AnalysisViewer {
         currentMatch = MATCHES.get(i);
     }
 
+    public void shoots(int playerID, boolean scored, LocalDateTime time) throws Exception {
+        Player player = PlayerAnalysis.findPlayer(playerID);
+        if(currentMatch.playerIsInMatch(player)) {
+            if(scored) {
+                currentMatch.incrementTeamScore(player.getTeamID());
+            }
+            player.shoots(time, scored, currentMatch.getMATCH_ID());
+        }
+        else throw new RuntimeException("Cannot add a goal from a player who isn't currently in the match");
+    }
+
+    public void addInfraction(int playerID, InfractionType type, LocalDateTime time) {
+        Player player = PlayerAnalysis.findPlayer(playerID);
+        if(currentMatch.playerIsInMatch(player)) {
+            player.commitsInfraction(type, time, currentMatch.getMATCH_ID());
+        }
+        else throw new RuntimeException("Cannot add an infraction to a player who isn't currently in the match");
+    }
+
+    public void transferMatchToLeague(Match match) {
+        MATCHES.remove(match);
+        LeagueAnalysis.addMatch(match);
+    }
+
     public List<Match> getMATCHES() {
         return MATCHES;
     }
@@ -24,29 +48,5 @@ public abstract class ScoreKeeper extends AnalysisViewer {
 
     public Match getCurrentMatch() {
         return currentMatch;
-    }
-
-    public void shoots(int playerID, boolean scored, LocalDateTime time) throws Exception {
-        Player player = PlayerAnalysis.findPlayer(playerID);
-        if(getCurrentMatch().playerIsInMatch(player)) {
-            if(scored) {
-                getCurrentMatch().incrementTeamScore(player.getTeamID());
-            }
-            player.shoots(time, scored, getCurrentMatch().getMATCH_ID());
-        }
-        else throw new RuntimeException("Cannot add a goal from a player who isn't currently in the match");
-    }
-
-    public void addInfraction(int playerID, InfractionType type, LocalDateTime time) {
-        Player player = PlayerAnalysis.findPlayer(playerID);
-        if(getCurrentMatch().playerIsInMatch(player)) {
-            player.commitsInfraction(type, time, getCurrentMatch().getMATCH_ID());
-        }
-        else throw new RuntimeException("Cannot add an infraction to a player who isn't currently in the match");
-    }
-
-    public void transferMatchToLeague(Match match) {
-        MATCHES.remove(match);
-        LeagueAnalysis.addMatch(match);
     }
 }
