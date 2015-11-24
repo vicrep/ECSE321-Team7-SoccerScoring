@@ -23,6 +23,17 @@ public class AnalysisViewer {
         return LeagueAnalysis.getLeague();
     }
 
+    public List getMatchesByID() {
+        LeagueAnalysis.sortMatchesByID();
+        return LeagueAnalysis.getMatches();
+    }
 
+    public List getMatchesByDate() {
+        LeagueAnalysis.sortMatchesByDate();
+        return LeagueAnalysis.getMatches();
+    }
 
+    public List getMatchesForTeam(int teamID) {
+        return LeagueAnalysis.getMatchesForTeam(teamID);
+    }
 }

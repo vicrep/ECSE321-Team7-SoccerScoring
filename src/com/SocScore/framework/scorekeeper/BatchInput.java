@@ -1,4 +1,4 @@
-package com.SocScore.framework;
+package com.SocScore.framework.scorekeeper;
 
 import com.SocScore.framework.data.LeagueAnalysis;
 import com.SocScore.framework.data.Match;

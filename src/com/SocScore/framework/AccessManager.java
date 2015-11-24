@@ -1,5 +1,9 @@
 package com.SocScore.framework;
 
+import com.SocScore.framework.scorekeeper.BatchInput;
+import com.SocScore.framework.scorekeeper.LiveInput;
+import com.SocScore.framework.scorekeeper.ScoreKeeperType;
+
 public class AccessManager {
 
     private static boolean isAuth = false;

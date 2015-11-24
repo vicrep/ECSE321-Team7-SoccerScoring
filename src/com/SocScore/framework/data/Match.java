@@ -2,6 +2,7 @@ package com.SocScore.framework.data;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Comparator;
 
 public class Match {
     private static int count = 0;
@@ -92,6 +93,11 @@ public class Match {
         else return ChronoUnit.MINUTES.between(startTime, endTime);
     }
 
+    //comparators for sorting
+    public static Comparator<Match> sortByID = (m1, m2) -> m1.getMATCH_ID() - m2.getMATCH_ID();
+
+    public static Comparator<Match> sortByTime = (m1, m2) -> m1.getStartTime().compareTo(m2.getStartTime());
+
     //setters and getters
     public int getMATCH_ID() {
         return MATCH_ID;
@@ -119,5 +125,13 @@ public class Match {
 
     public int getTEAM2_ID() {
         return TEAM2_ID;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
     }
 }

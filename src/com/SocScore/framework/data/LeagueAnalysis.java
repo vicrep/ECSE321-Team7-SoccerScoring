@@ -1,9 +1,10 @@
 package com.SocScore.framework.data;
 
-import com.SocScore.framework.ScoreKeeper;
+import com.SocScore.framework.scorekeeper.ScoreKeeper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LeagueAnalysis {
     private static List<Team> league = new ArrayList<>();
@@ -41,6 +42,20 @@ public class LeagueAnalysis {
         }
     }
 
+    public static void sortMatchesByID() {
+        matches.sort(Match.sortByID);
+    }
+
+    public static void sortMatchesByDate() {
+        matches.sort(Match.sortByTime);
+    }
+
+    public static List getMatchesForTeam(int teamID) throws RuntimeException {
+        List<Match> searchList = matches.stream().filter(match -> match.getTEAM1_ID() == teamID || match.getTEAM2_ID() == teamID).collect(Collectors.toList());
+        if(searchList.isEmpty()) throw new RuntimeException("Could not find any matches for Team ID: " + teamID);
+        return searchList;
+    }
+
     public static Match findMatch(int ID) throws RuntimeException {
         for (Match match : matches) {
             if(match.getMATCH_ID() == ID) return match;
@@ -50,7 +65,7 @@ public class LeagueAnalysis {
 
     public static void saveLeagueToDisk() throws RuntimeException {
         if(ScoreKeeper.hasUnsavedMatches())
-            throw new RuntimeException("Cannot save to disk until all matches have been transferred from ScoreKeeping to League");
+            throw new RuntimeException("Cannot save to disk until all matches have been transferred from Score Keeping instances to League");
         DataPersistence.saveToDisk("league.xml", league);
         DataPersistence.saveToDisk("matches.xml", matches);
     }
