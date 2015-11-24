@@ -38,4 +38,14 @@ public class LeagueInput extends AnalysisViewer {
         Match match = LeagueAnalysis.findMatch(matchID);
         LeagueAnalysis.removeMatch(match);
     }
+
+    public static void main(String[] args) {
+        LeagueInput test = new LeagueInput();
+        test.addTeamToLeague("France");
+        test.addNewPlayerToTeam("Jacques", 0);
+        test.addTeamToLeague("Italy");
+        test.addNewPlayerToTeam("Gio", 1);
+        LeagueAnalysis.saveLeagueToDisk();
+        PlayerAnalysis.savePlayersToDisk();
+    }
 }
