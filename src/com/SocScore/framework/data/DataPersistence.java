@@ -9,8 +9,8 @@ import java.util.List;
 
 public class DataPersistence {
     private static XStream xstream = new XStream();
-    private static FileReader reader = null;
-    private static FileWriter writer = null;
+    private static FileReader reader;
+    private static FileWriter writer;
     static {
         xstream.alias("Player", Player.class);
         xstream.alias("Team", Team.class);
@@ -53,6 +53,7 @@ public class DataPersistence {
     }
 
     public static ArrayList loadFromDisk(String fileName) {
+        reader = null;
         try {
             reader = new FileReader(fileName);
             return (ArrayList)xstream.fromXML(reader);
@@ -60,6 +61,15 @@ public class DataPersistence {
         catch(Exception e) {
             System.err.println("Error in XML Read: " + e.getMessage());
             return null;
+        }
+        finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

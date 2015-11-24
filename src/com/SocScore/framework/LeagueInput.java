@@ -22,7 +22,7 @@ public class LeagueInput extends AnalysisViewer {
 
     public void removeTeamFromLeague(int teamID) {
         Team team = LeagueAnalysis.findTeam(teamID);
-        for(Player player : team.getPLAYERS()) {
+        for(Player player : team.getPlayers()) {
             PlayerAnalysis.removePlayer(player);
         }
         LeagueAnalysis.removeTeam(team);
@@ -47,6 +47,17 @@ public class LeagueInput extends AnalysisViewer {
         test.addNewPlayerToTeam("Gio", 1);
         LeagueAnalysis.saveLeagueToDisk();
         PlayerAnalysis.savePlayersToDisk();
+
+
+        LeagueAnalysis.loadLeagueFromDisk();
+        PlayerAnalysis.loadPlayersFromDisk();
+//        PlayerAnalysis.findPlayer(0).setTeamID(1);
+//        System.out.println(LeagueAnalysis.findTeam(1).getPlayers().get(0).getTeamID());
+
+//        LeagueAnalysis.saveLeagueToDisk();
+//        PlayerAnalysis.savePlayersToDisk();
+
+
 
     }
 }

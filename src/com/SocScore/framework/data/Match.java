@@ -65,7 +65,7 @@ public class Match {
     }
 
     public boolean playerIsInMatch(Player player) {
-        return (TEAM1.getPLAYERS().contains(player) || TEAM2.getPLAYERS().contains(player));
+        return (TEAM1.getPlayers().contains(player) || TEAM2.getPlayers().contains(player));
     }
 
     public long getElapsedTime() {

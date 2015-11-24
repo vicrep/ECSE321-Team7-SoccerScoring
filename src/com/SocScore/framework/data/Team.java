@@ -8,7 +8,8 @@ public class Team {
     private static int count = 0;
 
     private final int TEAM_ID = count++;
-    private final List<Player> PLAYERS = new ArrayList<>();
+
+    private List<Player> players;
 
     private int numOfMatchesPlayed = 0;
     private int numOfVictories = 0;
@@ -18,23 +19,32 @@ public class Team {
     private int totalGoalsScored = 0;
     private String name;
 
+
+
     //Constructor
     public Team(String name) {
         this.name = name;
+        readResolve();
+    }
+
+    public void readResolve() {
+        players = new ArrayList<>();
     }
 
     //Methods
+
     public void addPlayer(Player player) {
-        PLAYERS.add(player);
+        players.add(player);
+        player.setTeamID(TEAM_ID);
     }
 
     public void removePlayer(Player player) {
-        PLAYERS.remove(player);
+        players.remove(player);
     }
 
     public void startMatch() throws Exception {
-        if(PLAYERS.size() < 11) throw new Exception("Teams must have at least 11 players to start a match");
-        PLAYERS.forEach(Player::startMatch);
+        if(players.size() < 11) throw new Exception("Teams must have at least 11 players to start a match");
+        players.forEach(Player::startMatch);
     }
 
     public void endMatch(int winnerID, int goals) {
@@ -42,7 +52,7 @@ public class Team {
         else if(winnerID == -1) numOfDraws++;
         else numOfLosses++;
 
-        PLAYERS.forEach(Player::endMatch);
+        players.forEach(Player::endMatch);
         updateTeamScore();
         totalGoalsScored += goals;
     }
@@ -66,8 +76,8 @@ public class Team {
         return TEAM_ID;
     }
 
-    public List<Player> getPLAYERS() {
-        return PLAYERS;
+    public List<Player> getPlayers() {
+        return players;
     }
 
     public int getNumOfMatchesPlayed() {

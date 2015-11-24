@@ -40,5 +40,9 @@ public class PlayerAnalysis {
 
     public static void loadPlayersFromDisk() {
         players = DataPersistence.loadFromDisk("players.xml");
+//        for(Player player : players) {
+//            int teamID = player.getTeamID();
+//            LeagueAnalysis.findTeam(teamID).getPlayers();
+//        }
     }
 }

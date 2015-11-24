@@ -25,7 +25,7 @@ public class LeagueAnalysis {
 
     public static Team findTeam(int ID) throws RuntimeException {
         for(Team team : league) {
-            if(team.getTEAM_ID() == ID) return team;
+                if(team.getTEAM_ID() == ID) return team;
         }
         throw new NullPointerException("Could not find team under provided ID: " + ID);
     }
