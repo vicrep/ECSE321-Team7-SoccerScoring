@@ -18,7 +18,9 @@ public class BatchInput extends ScoreKeeper {
 
     public void addMatchesToLeague() {
         for(Match match : getMATCHES()) {
-            transferMatchToLeague(match);
+            if(match!=null) {
+                transferMatchToLeague(match);
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ public class Team {
 
     private final int TEAM_ID = count++;
 
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
 
     private int numOfMatchesPlayed = 0;
     private int numOfVictories = 0;
@@ -24,10 +24,9 @@ public class Team {
     //Constructor
     public Team(String name) {
         this.name = name;
-        readResolve();
     }
 
-    public void readResolve() {
+    public void resetPlayers() {
         players = new ArrayList<>();
     }
 

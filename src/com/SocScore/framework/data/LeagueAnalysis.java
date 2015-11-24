@@ -54,5 +54,8 @@ public class LeagueAnalysis {
     public static void loadLeagueFromDisk() {
         league = DataPersistence.loadFromDisk("league.xml");
         matches = DataPersistence.loadFromDisk("matches.xml");
+        for(Team team : league) {
+            team.resetPlayers();
+        }
     }
 }

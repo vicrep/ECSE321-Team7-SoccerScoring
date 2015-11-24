@@ -27,6 +27,10 @@ public class DataPersistence {
         xstream.aliasField("ID", Team.class, "TEAM_ID");
         xstream.useAttributeFor(Match.class, "MATCH_ID");
         xstream.aliasField("ID", Match.class, "MATCH_ID");
+        xstream.omitField(Player.class, "currentYellow");
+        xstream.omitField(Player.class, "currentRed");
+        xstream.omitField(Player.class, "currentPenalty");
+        xstream.omitField(Player.class, "currentGoals");
     }
 
 

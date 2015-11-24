@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class PlayerAnalysis {
-    private static List<Player> players = new ArrayList<>();
+    private static List<Player> players = new ArrayList();
 
     public static void addPlayer(Player player) {
         players.add(player);
@@ -40,9 +40,10 @@ public class PlayerAnalysis {
 
     public static void loadPlayersFromDisk() {
         players = DataPersistence.loadFromDisk("players.xml");
-//        for(Player player : players) {
-//            int teamID = player.getTeamID();
-//            LeagueAnalysis.findTeam(teamID).getPlayers();
-//        }
+        for(Player player : players) {
+            int teamID = player.getTeamID();
+            Team team = LeagueAnalysis.findTeam(teamID);
+            team.addPlayer(player);
+        }
     }
 }

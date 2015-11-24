@@ -2,6 +2,8 @@ package com.SocScore.framework;
 
 import com.SocScore.framework.data.*;
 
+import java.time.LocalDateTime;
+
 public class LeagueInput extends AnalysisViewer {
 
     public void removePlayerFromLeague(int playerID) {
@@ -40,22 +42,36 @@ public class LeagueInput extends AnalysisViewer {
     }
 
     public static void main(String[] args) {
+        //just to test
         LeagueInput test = new LeagueInput();
         test.addTeamToLeague("France");
         test.addNewPlayerToTeam("Jacques", 0);
         test.addTeamToLeague("Italy");
         test.addNewPlayerToTeam("Gio", 1);
+        for(int i = 0; i < 10; i++) {
+            test.addNewPlayerToTeam("Player " + i, 0);
+            test.addNewPlayerToTeam("Player " + (i+10), 1);
+        }
+
+        BatchInput testBatch = new BatchInput();
+
+        testBatch.createMatch(LeagueAnalysis.findTeam(0), LeagueAnalysis.findTeam(1), LocalDateTime.now(), LocalDateTime.now().plusMinutes(80));
+        try {
+            testBatch.shoots(0, true, LocalDateTime.now().plusMinutes(30));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            testBatch.saveMatch();
+            testBatch.addMatchesToLeague();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         LeagueAnalysis.saveLeagueToDisk();
         PlayerAnalysis.savePlayersToDisk();
-
-
-        LeagueAnalysis.loadLeagueFromDisk();
-        PlayerAnalysis.loadPlayersFromDisk();
-//        PlayerAnalysis.findPlayer(0).setTeamID(1);
-//        System.out.println(LeagueAnalysis.findTeam(1).getPlayers().get(0).getTeamID());
-
-//        LeagueAnalysis.saveLeagueToDisk();
-//        PlayerAnalysis.savePlayersToDisk();
 
 
 
