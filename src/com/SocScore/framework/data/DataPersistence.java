@@ -1,9 +1,11 @@
 package com.SocScore.framework.data;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class DataPersistence {
     private static FileReader reader;
     private static FileWriter writer;
     static {
+        xstream.registerConverter(new LocalDateTimeConverter());
         xstream.alias("Player", Player.class);
         xstream.alias("Team", Team.class);
         xstream.alias("Match", Match.class);
@@ -31,6 +34,8 @@ public class DataPersistence {
         xstream.omitField(Player.class, "currentRed");
         xstream.omitField(Player.class, "currentPenalty");
         xstream.omitField(Player.class, "currentGoals");
+        xstream.omitField(Match.class, "team1");
+        xstream.omitField(Match.class, "team2");
     }
 
 
@@ -76,4 +81,25 @@ public class DataPersistence {
             }
         }
     }
+}
+
+class LocalDateTimeConverter extends AbstractSingleValueConverter {
+
+    public boolean canConvert(Class type) {
+        return (type!=null) && LocalDateTime.class.getPackage().equals(type.getPackage());
+    }
+
+    public String toString (Object source) {
+        return source.toString();
+    }
+
+    public Object fromString(String str) {
+        try {
+            return LocalDateTime.parse(str);
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+
 }

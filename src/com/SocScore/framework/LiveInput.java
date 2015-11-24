@@ -7,20 +7,21 @@ import java.time.LocalDateTime;
 public class LiveInput extends ScoreKeeper {
 
     public void createMatch(Team team1, Team team2) {
-        setCurrentMatch(new Match(team1, team2));
+        currentMatch = new Match(team1, team2);
         getMATCHES().add(getCurrentMatch());
+        hasUnsavedMatches = true;
     }
 
     public void startMatch() throws Exception {
-        getCurrentMatch().startMatch(LocalDateTime.now());
+        currentMatch.startMatch(LocalDateTime.now());
     }
 
     public void endMatch() throws Exception {
-        getCurrentMatch().endMatch(LocalDateTime.now());
+        currentMatch.endMatch(LocalDateTime.now());
         transferMatchToLeague(getCurrentMatch());
     }
 
-    public void shoots(int playerID, boolean scored) throws Exception {
+    public void shoots(int playerID, boolean scored) throws RuntimeException {
         shoots(playerID, scored, LocalDateTime.now());
     }
 

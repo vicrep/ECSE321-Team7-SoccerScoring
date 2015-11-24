@@ -6,15 +6,30 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Abstract class which contains methods shared between the Match Input classes.
+ * @see LiveInput
+ * @see BatchInput
+ */
 public abstract class ScoreKeeper extends AnalysisViewer {
-    private final List<Match> MATCHES = new ArrayList<>();
-    private Match currentMatch;
+    /**
+     * ArrayList of Match objects, used to temporarily store matches being monitored by the Score Keeping class using it.
+     * <p>
+     *     Note that these matches are not stored in the league until you call a transfer method on them.
+     * </p>
+     * @see Match
+     * @see LiveInput#endMatch()
+     * @see BatchInput#addAllMatchesToLeague()
+     */
+    final List<Match> MATCHES = new ArrayList<>();
+    Match currentMatch;
+    static boolean hasUnsavedMatches = false;
 
     public void selectMatch(int i) {
         currentMatch = MATCHES.get(i);
     }
 
-    public void shoots(int playerID, boolean scored, LocalDateTime time) throws Exception {
+    public void shoots(int playerID, boolean scored, LocalDateTime time) throws RuntimeException {
         Player player = PlayerAnalysis.findPlayer(playerID);
         if(currentMatch.playerIsInMatch(player)) {
             if(scored) {
@@ -34,19 +49,24 @@ public abstract class ScoreKeeper extends AnalysisViewer {
     }
 
     public void transferMatchToLeague(Match match) {
-        MATCHES.remove(match);
         LeagueAnalysis.addMatch(match);
+        MATCHES.remove(match);
+        hasUnsavedMatches = !MATCHES.isEmpty();
     }
 
     public List<Match> getMATCHES() {
         return MATCHES;
     }
 
-    public void setCurrentMatch(Match match) {
+    void setCurrentMatch(Match match) {
         this.currentMatch = match;
     }
 
     public Match getCurrentMatch() {
         return currentMatch;
+    }
+
+    public static boolean hasUnsavedMatches() {
+        return hasUnsavedMatches;
     }
 }

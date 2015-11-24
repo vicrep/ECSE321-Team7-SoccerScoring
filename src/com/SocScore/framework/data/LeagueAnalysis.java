@@ -1,5 +1,7 @@
 package com.SocScore.framework.data;
 
+import com.SocScore.framework.ScoreKeeper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +48,9 @@ public class LeagueAnalysis {
         throw new NullPointerException("Could not find match under provided ID: " + ID);
     }
 
-    public static void saveLeagueToDisk() {
+    public static void saveLeagueToDisk() throws RuntimeException {
+        if(ScoreKeeper.hasUnsavedMatches())
+            throw new RuntimeException("Cannot save to disk until all matches have been transferred from ScoreKeeping to League");
         DataPersistence.saveToDisk("league.xml", league);
         DataPersistence.saveToDisk("matches.xml", matches);
     }
@@ -54,8 +58,15 @@ public class LeagueAnalysis {
     public static void loadLeagueFromDisk() {
         league = DataPersistence.loadFromDisk("league.xml");
         matches = DataPersistence.loadFromDisk("matches.xml");
-        for(Team team : league) {
-            team.resetPlayers();
-        }
+        league.forEach(Team::resetPlayers);
+        matches.forEach(Match::resetTeams);
+    }
+
+    public static List getLeague() {
+        return league;
+    }
+
+    public static List getMatches() {
+        return matches;
     }
 }

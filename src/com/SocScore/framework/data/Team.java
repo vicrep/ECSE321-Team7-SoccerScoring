@@ -41,8 +41,8 @@ public class Team {
         players.remove(player);
     }
 
-    public void startMatch() throws Exception {
-        if(players.size() < 11) throw new Exception("Teams must have at least 11 players to start a match");
+    public void startMatch() throws RuntimeException {
+        if(players.size() < 11) throw new RuntimeException("Teams must have at least 11 players to start a match");
         players.forEach(Player::startMatch);
     }
 
