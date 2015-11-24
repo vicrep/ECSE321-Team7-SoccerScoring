@@ -1,15 +1,11 @@
 package com.SocScore.framework.data;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.StaxDriver;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class LeagueAnalysis {
     private static List<Team> league = new ArrayList<>();
     private static List<Match> matches = new ArrayList<>();
-    private static XStream xstream = new XStream(new StaxDriver());
 
     public static void addTeam(Team team) {
         league.add(team);
@@ -56,6 +52,7 @@ public class LeagueAnalysis {
     }
 
     public static void loadLeagueFromDisk() {
-
+        league = DataPersistence.loadFromDisk("league.xml");
+        matches = DataPersistence.loadFromDisk("matches.xml");
     }
 }

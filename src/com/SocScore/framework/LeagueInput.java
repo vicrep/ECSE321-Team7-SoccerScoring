@@ -47,5 +47,6 @@ public class LeagueInput extends AnalysisViewer {
         test.addNewPlayerToTeam("Gio", 1);
         LeagueAnalysis.saveLeagueToDisk();
         PlayerAnalysis.savePlayersToDisk();
+
     }
 }

@@ -1,8 +1,8 @@
 package com.SocScore.framework.data;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.ArrayList;
 
 public class Team {
     private static int count = 0;

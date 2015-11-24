@@ -1,15 +1,11 @@
 package com.SocScore.framework.data;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.StaxDriver;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class PlayerAnalysis {
     private static List<Player> players = new ArrayList<>();
-    private static XStream xstream = new XStream(new StaxDriver());
 
     public static void addPlayer(Player player) {
         players.add(player);
