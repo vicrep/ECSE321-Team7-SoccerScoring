@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * Object which manages creating, editing, and saving of matches in a batch context.
- * Also allows to edit matches stored in {@link LeagueAnalysis#matches} (i.e. matches which have already happened)
+ * Also allows to edit matches stored in {@link LeagueAnalysis} (i.e. matches which have already happened)
  */
 public class BatchInput extends ScoreKeeper {
 
@@ -37,7 +37,7 @@ public class BatchInput extends ScoreKeeper {
     }
 
     /**
-     * Saves ({@link Match#updateScore()}) and then adds all matches to {@link LeagueAnalysis#matches}, and removes them from {@link #MATCHES}.
+     * Saves ({@link Match#updateScore()}) and then adds all matches to {@link LeagueAnalysis}, and removes them from {@link #MATCHES}.
      */
     public void addAllMatchesToLeague() {
         int numberOfMatchesToSave = MATCHES.size();
@@ -49,7 +49,7 @@ public class BatchInput extends ScoreKeeper {
     }
 
     /**
-     * Allows to load a match from {@link LeagueAnalysis#matches}, add it to {@link #MATCHES}, set it as {@link #currentMatch} and edit it.
+     * Allows to load a match from {@link LeagueAnalysis}, add it to {@link #MATCHES}, set it as {@link #currentMatch} and edit it.
      * @param ID The ID of the match being loaded.
      */
     public void loadMatchFromLeague(int ID) {

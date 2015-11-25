@@ -1,9 +1,13 @@
 package com.SocScore.framework.data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Object which stores all information related to a single team.
+ */
 public class Team {
     private static int count = 0;
 
@@ -22,30 +26,58 @@ public class Team {
 
 
     //Constructor
+
+    /**
+     * Initializes a new team with given name.
+     * @param name Name to be given to a team, doesn't have to be unique
+     */
     public Team(String name) {
         this.name = name;
     }
 
+    /**
+     * Resets the list of {@link Player} to a new ArrayList, used when loading data from disk to prevent duplicates
+     * @see PlayerAnalysis#loadPlayersFromDisk()
+     */
     public void resetPlayers() {
         players = new ArrayList<>();
     }
 
     //Methods
 
+    /**
+     * Allows to add a new player to the team.
+     * @param player Player object to be added to the team.
+     */
     public void addPlayer(Player player) {
         players.add(player);
         player.setTeamID(TEAM_ID);
     }
 
+    /**
+     * Allows to remove a player from the team.
+     * @param player Player object to be removed.
+     */
     public void removePlayer(Player player) {
         players.remove(player);
     }
 
+    /**
+     * Starts a new match, sets all players to their initial player.
+     * @throws RuntimeException Throws an exception if there aren't at least 11 players in the team
+     */
     public void startMatch() throws RuntimeException {
         if(players.size() < 11) throw new RuntimeException("Teams must have at least 11 players to start a match");
         players.forEach(Player::startMatch);
     }
 
+    /**
+     * Ends a match, and updates attributes for the team and its players.
+     * @see #updateTeamScore()
+     * @see Match#endMatch(LocalDateTime)
+     * @param winnerID the team ID of the winning team.
+     * @param goals the number of goals scored by the team.
+     */
     public void endMatch(int winnerID, int goals) {
         if(winnerID == TEAM_ID) numOfVictories++;
         else if(winnerID == -1) numOfDraws++;
@@ -56,12 +88,15 @@ public class Team {
         totalGoalsScored += goals;
     }
 
+    /**
+     * Calculates the score of the team, based on its number of victories, draws, and losses
+     */
     private void updateTeamScore() {
         teamScore = (3*numOfVictories) + numOfDraws;
         numOfMatchesPlayed = numOfVictories + numOfDraws + numOfLosses;
     }
 
-    //comparators (for ranking)
+    //comparators
     public static Comparator<Team> rankByID = (t1, t2) -> t1.getTEAM_ID() - t2.getTEAM_ID();
 
     public static Comparator<Team> rankByScore = (t1, t2) -> t2.getTeamScore() - t1.getTeamScore();
