@@ -16,14 +16,12 @@ public abstract class ScoreKeeper extends AnalysisViewer {
     /**
      * ArrayList of Match objects, used to temporarily store matches being monitored by the Score Keeping instance using it.
      * Note that these matches are not stored in the league until you call a transfer method on them.
-     *
      * @see LiveInput#endMatch()
      * @see BatchInput#addAllMatchesToLeague()
      */
     final List<Match> MATCHES = new ArrayList<>();
     /**
      * Allows for easy access to the match that is being edited
-     *
      * @see #selectMatch(int)
      */
     Match currentMatch;
@@ -47,7 +45,6 @@ public abstract class ScoreKeeper extends AnalysisViewer {
      * Used to register that a player in {@link #currentMatch} has attempted a shot at the goal.
      * If the attempt is successful, the appropriate team's score is automatically updated. In both situations,
      * a {@link ShotOnGoal} instance is added to the player's {@link Player#SHOTS_ON_GOAL};
-     *
      * @param playerID ID of the player who performed the shot on Goal.
      * @param scored Set to true if a goal was scored.
      * @param time Time at which the action was performed.
@@ -67,7 +64,6 @@ public abstract class ScoreKeeper extends AnalysisViewer {
     /**
      * Used to register that a player in {@link #currentMatch} has committed an infraction.
      * This adds the infraction to the player's {@link Player#INFRACTIONS}.
-     *
      * @param playerID ID of the player who performed the infraction.
      * @param type Type of infraction committed.
      * @param time Time at which the infraction was committed.
@@ -82,7 +78,6 @@ public abstract class ScoreKeeper extends AnalysisViewer {
 
     /**
      * Transfers a completed match from the Score Keeping instance's {@link #MATCHES} to {@link LeagueAnalysis#matches}
-     *
      * @see BatchInput#addAllMatchesToLeague()
      * @see LiveInput#endMatch()
      * @param match Match object to be transferred.

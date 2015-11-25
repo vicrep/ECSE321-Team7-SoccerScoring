@@ -23,25 +23,36 @@ public class LiveInput extends ScoreKeeper {
     }
 
     /**
-     * Starts a new match, and sets the {@link Match#startTime}
-     * @throws RuntimeException throws an exception if the match has already started, or has ended.
+     * Starts a new match, and sets the {@link Match#startTime} to the current time.
+     * @see Match#startMatch(LocalDateTime)
+     * @throws RuntimeException Throws an exception if the match has already started, or has ended.
      */
     public void startMatch() throws RuntimeException {
         currentMatch.startMatch(LocalDateTime.now());
     }
 
+    /**
+     * Ends a match, sets the {@link Match#endTime}, updates relevant fields, and transfers the match to the League.
+     * @see Match#endMatch(LocalDateTime)
+     * @see #transferMatchToLeague(Match)
+     * @throws RuntimeException Throws an exception if the match has not been started with {@link #startMatch()}
+     */
     public void endMatch() throws RuntimeException {
         currentMatch.endMatch(LocalDateTime.now());
         transferMatchToLeague(getCurrentMatch());
     }
 
+    /**
+     * Calls {@link #shoots(int, boolean, LocalDateTime)} with the current time
+     */
     public void shoots(int playerID, boolean scored) throws RuntimeException {
         shoots(playerID, scored, LocalDateTime.now());
     }
 
+    /**
+     * Calls {@link #addInfraction(int, InfractionType, LocalDateTime)} with the current time
+     */
     public void addInfraction(int playerID, InfractionType type) {
         addInfraction(playerID, type, LocalDateTime.now());
     }
-
-
 }

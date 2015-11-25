@@ -6,6 +6,10 @@ import com.SocScore.framework.data.TeamRankType;
 
 import java.util.List;
 
+/**
+ * Object which allows the user to load saved data, and get various forms of this data.
+ * Note that this object does not allow the modification or saving of loaded data.
+ */
 public class AnalysisViewer {
 
     public void loadDataFromDisk() {

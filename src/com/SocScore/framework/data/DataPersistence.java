@@ -1,5 +1,7 @@
 package com.SocScore.framework.data;
 
+import com.SocScore.framework.AnalysisViewer;
+import com.SocScore.framework.LeagueInput;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
 
@@ -9,6 +11,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementation of {@link XStream} for persisting user data.
+ * @see LeagueInput#saveDataToDisk() ()
+ * @see AnalysisViewer#loadDataFromDisk()
+ */
 public class DataPersistence {
     private static XStream xstream = new XStream();
     private static FileReader reader;
@@ -38,7 +45,11 @@ public class DataPersistence {
         xstream.omitField(Match.class, "team2");
     }
 
-
+    /**
+     * Saves data from an ArrayList to an XML file.
+     * @param fileName name of file to write too, should be '*.xml' (no overwrite protection).
+     * @param in ArrayList to be saved.
+     */
     public static void saveToDisk(String fileName, List in) {
         writer = null;
         try {
@@ -61,6 +72,11 @@ public class DataPersistence {
         }
     }
 
+    /**
+     * Loads data from file, and converts it to an ArrayList.
+     * @param fileName name of file to read from, should be '*.xml'.
+     * @return Returns an ArrayList containing data in file.
+     */
     public static ArrayList loadFromDisk(String fileName) {
         reader = null;
         try {
@@ -83,6 +99,10 @@ public class DataPersistence {
     }
 }
 
+/**
+ * Converts LocalDateTime objects for more readable storage
+ * @see DataPersistence
+ */
 class LocalDateTimeConverter extends AbstractSingleValueConverter {
 
     public boolean canConvert(Class type) {
