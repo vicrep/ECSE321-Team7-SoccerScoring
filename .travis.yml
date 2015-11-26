@@ -2,4 +2,13 @@ language: java
 jdk:
   - oraclejdk8
 script:
-        - ant
+  - ant
+
+deploy:
+  provider: releases
+  api_key: "5da6c194f00f7636389b60f2083857443e6492a8"
+  file: "/build/lib/socscore-framework.jar"
+  skip_cleanup: true
+  on:
+    tags: true
+
