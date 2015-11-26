@@ -151,9 +151,19 @@ public class Match {
     }
 
     //comparators for sorting
-    public static Comparator<Match> sortByID = (m1, m2) -> m1.getMATCH_ID() - m2.getMATCH_ID();
+    public static Comparator<Match> sortByID = new Comparator<Match>() {
+        @Override
+        public int compare(Match m1, Match m2) {
+            return m1.getMATCH_ID() - m2.getMATCH_ID();
+        }
+    };
 
-    public static Comparator<Match> sortByTime = (m1, m2) -> m1.getStartTime().compareTo(m2.getStartTime());
+    public static Comparator<Match> sortByTime = new Comparator<Match>() {
+        @Override
+        public int compare(Match m1, Match m2) {
+            return m1.getStartTime().compareTo(m2.getStartTime());
+        }
+    };
 
     //setters and getters
 

@@ -4,7 +4,6 @@ import com.SocScore.framework.scorekeeper.ScoreKeeper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Static class which stores the lists of {@link Team} and {@link Match} in the league, and performs operations on them.
@@ -96,7 +95,12 @@ public class LeagueAnalysis {
      * @throws RuntimeException Throws an exception if no matches could be found for the team.
      */
     public static List getMatchesForTeam(int teamID) throws RuntimeException {
-        List<Match> searchList = matches.stream().filter(match -> match.getTEAM1_ID() == teamID || match.getTEAM2_ID() == teamID).collect(Collectors.toList());
+        List<Match> searchList = new ArrayList();
+        for(Match match : matches) {
+            if(match.getTEAM1_ID() == teamID || match.getTEAM2_ID() == teamID) {
+                searchList.add(match);
+            }
+        }
         if(searchList.isEmpty()) throw new RuntimeException("Could not find any matches for Team ID: " + teamID);
         return searchList;
     }
@@ -138,8 +142,12 @@ public class LeagueAnalysis {
     public static void loadLeagueFromDisk() {
         league = DataPersistence.loadFromDisk("league.xml");
         matches = DataPersistence.loadFromDisk("matches.xml");
-        league.forEach(Team::resetPlayers);
-        matches.forEach(Match::resetTeams);
+        for(Team team: league) {
+            team.resetPlayers();
+        };
+        for(Match match : matches) {
+            match.resetTeams();
+        }
     }
 
     /**

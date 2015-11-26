@@ -76,8 +76,5 @@ public class LeagueInput extends AnalysisViewer {
         test.saveDataToDisk();
         test.loadDataFromDisk();
         test.saveDataToDisk();
-
-
-
     }
 }
