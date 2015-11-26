@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/vicrep/TravisExercise.svg?branch=master)](https://travis-ci.org/vicrep/TravisExercise)
 # SocScore
 *McGill Fall 2015 - ECSE321 Team 7 Group Project*
 
