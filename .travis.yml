@@ -1,14 +1,14 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 script:
-  - ant
-
+- ant
 deploy:
   provider: releases
-  api_key: "5da6c194f00f7636389b60f2083857443e6492a8"
-  file: "/build/lib/socscore-framework.jar"
+  user: "vicrep"
+  password:
+    secure: ctfuHlntdc1/gH2bpiVtFLzBIHzcjsQMGrYynPh82gVl+mOsB/YRme6uWeUOuobl6ESvn6yCQjqClj9qGBnMwqVKPRSuHUcE0xOtXiJbpm7Vv4wLqsdWLrvh3fZRG9/1p25vVb6ZEnfmD9uHJzHa/str+PbrUIaSBCtXnHb7pDPy0t2Q5dLLv5z9uH+rxNisKu4jU+B7midKPsRLBZybr04mD8ht7x9SKpBguZuwejvVa7uy8qiGumBHE0duf+0mzffB7hTieBP/uKaQ/AGfwWdIOJmxLS5oE7yBA52GcYekKoFZ82ZkuRj+/KYHqYvDlar/Gn63J1DBMjxfBuhuv+kVQHbuy34ijFlSW+0YTHF+iJF006xA4Z7MOoMt2Ubp0k738zBr9LmBcuPjsgsFt4KpLIdJi/E414pvxbVLqaoY5LhaZT9+qke4R51POshKe25xJI37gReZG8nylUVInPMePkWVWDzlc2+6lZGSCQCS3I/OS/MP+kDhzPznPzwmxTEfx9R/akVubGYOMolN1WABNf8OUN0YCOouQ8RJoxegBKkzuTVQp0z45iujNnJRN44BqbjHs3aK5WH9i7qxHBc+3YB1F0K3SNJMhIKKg2V2bHKJW+KJ8fWzIGctrvU3PYyQKQuEt0nahWmw7bSD7UnKGFPQ85FR2UM/axgYzJM=
+  file: "build/lib/socscore-framework.jar"
   skip_cleanup: true
   on:
     tags: true
-
