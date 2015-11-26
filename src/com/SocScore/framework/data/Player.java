@@ -100,17 +100,47 @@ public class Player {
     }
 
     //comparators (for ranking)
-    public static Comparator<Player> rankByID = (p1, p2) -> p1.getPLAYER_ID() - p2.getPLAYER_ID();
+    public static Comparator<Player> rankByID = new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return p1.getPLAYER_ID() - p2.getPLAYER_ID();
+        }
+    };
 
-    public static Comparator<Player> rankByName = (p1, p2) -> p1.getPLAYER_NAME().compareTo(p2.getPLAYER_NAME());
+    public static Comparator<Player> rankByName = new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return p1.getPLAYER_NAME().compareTo(p2.getPLAYER_NAME());
+        }
+    };
 
-    public static Comparator<Player> rankByGoals = (p1, p2) -> p1.getNumGoalsScored() - p2.getNumGoalsScored();
+    public static Comparator<Player> rankByGoals = new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return p1.getNumGoalsScored() - p2.getNumGoalsScored();
+        }
+    };
 
-    public static Comparator<Player> rankByRedCards = (p1, p2) -> p1.getNumRedCards() - p2.getNumRedCards();
+    public static Comparator<Player> rankByRedCards = new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return p1.getNumRedCards() - p2.getNumRedCards();
+        }
+    };
 
-    public static Comparator<Player> rankByYellowCards = (p1, p2) -> p1.getNumYellowCards() - p2.getNumYellowCards();
+    public static Comparator<Player> rankByYellowCards = new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return p1.getNumYellowCards() - p2.getNumYellowCards();
+        }
+    };
 
-    public static Comparator<Player> rankByPenalty = (p1, p2) -> p1.getNumPenaltyKicks() - p2.getNumPenaltyKicks();
+    public static Comparator<Player> rankByPenalty = new Comparator<Player>() {
+        @Override
+        public int compare(Player p1, Player p2) {
+            return p1.getNumPenaltyKicks() - p2.getNumPenaltyKicks();
+        }
+    };
 
     //setters and getters
 

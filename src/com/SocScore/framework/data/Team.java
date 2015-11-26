@@ -68,7 +68,9 @@ public class Team {
      */
     public void startMatch() throws RuntimeException {
         if(players.size() < 11) throw new RuntimeException("Teams must have at least 11 players to start a match");
-        players.forEach(Player::startMatch);
+        for(Player player : players) {
+            player.startMatch();
+        }
     }
 
     /**
@@ -83,7 +85,9 @@ public class Team {
         else if(winnerID == -1) numOfDraws++;
         else numOfLosses++;
 
-        players.forEach(Player::endMatch);
+        for(Player player : players) {
+            player.endMatch();
+        }
         updateTeamScore();
         totalGoalsScored += goals;
     }
@@ -97,11 +101,26 @@ public class Team {
     }
 
     //comparators
-    public static Comparator<Team> rankByID = (t1, t2) -> t1.getTEAM_ID() - t2.getTEAM_ID();
+    public static Comparator<Team> rankByID = new Comparator<Team>() {
+        @Override
+        public int compare(Team t1, Team t2) {
+            return t1.getTEAM_ID() - t2.getTEAM_ID();
+        }
+    };
 
-    public static Comparator<Team> rankByScore = (t1, t2) -> t2.getTeamScore() - t1.getTeamScore();
+    public static Comparator<Team> rankByScore = new Comparator<Team>() {
+        @Override
+        public int compare(Team t1, Team t2) {
+            return t2.getTeamScore() - t1.getTeamScore();
+        }
+    };
 
-    public static Comparator<Team> rankByTotalGoals = (t1, t2) -> t2.getTotalGoalsScored() - t1.getTotalGoalsScored();
+    public static Comparator<Team> rankByTotalGoals = new Comparator<Team>() {
+        @Override
+        public int compare(Team t1, Team t2) {
+            return t2.getTotalGoalsScored() - t1.getTotalGoalsScored();
+        }
+    };
 
 
 
