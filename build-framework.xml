@@ -1,0 +1,36 @@
+<project name="SocScore.framework" basedir="." default="clean">
+    <description>
+        ANT build file which generates JARs for the SocScore framework library.
+    </description>
+
+    <property name="src" value="${basedir}/src/com/SocScore/framework" />
+    <property name="build" value="${basedir}/build" />
+    <property name="tmp" value="${build}/tmp" />
+    <property name="dist" value="${build}/lib" />
+
+    <path id="class.path">
+        <fileset dir="lib">
+            <include name="XStream/*.jar" />
+        </fileset>
+    </path>
+
+    <target name="init">
+        <mkdir dir="${build}" />
+    </target>
+
+    <target name="compile" depends="init">
+        <mkdir dir="${tmp}" />
+        <javac srcdir="${src}" destdir="${tmp}">
+            <classpath refid="class.path" />
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile">
+        <mkdir dir="${dist}" />
+        <jar jarfile="${dist}/socscore-framework.jar" basedir="${build}"/>
+    </target>
+
+    <target name="clean" depends="dist">
+        <delete dir="${tmp}" />
+    </target>
+</project>

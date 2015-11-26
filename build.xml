@@ -1,0 +1,10 @@
+<project name="SocSocre" basedir="." default="run">
+    <description>
+        Main ANT build file for SocScore.
+    </description>
+
+    <target name="run">
+        <ant antfile="build-framework.xml" />
+    </target>
+
+</project>

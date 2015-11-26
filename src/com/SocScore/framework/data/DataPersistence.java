@@ -2,6 +2,7 @@ package com.SocScore.framework.data;
 
 import com.SocScore.framework.AnalysisViewer;
 import com.SocScore.framework.LeagueInput;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
 
