@@ -27,7 +27,7 @@
 
     <target name="dist" depends="compile">
         <mkdir dir="${dist}" />
-        <jar jarfile="${dist}/socscore-framework.jar" basedir="${build}"/>
+        <jar jarfile="${dist}/socscore-framework.jar" basedir="${tmp}"/>
     </target>
 
     <target name="clean" depends="dist">

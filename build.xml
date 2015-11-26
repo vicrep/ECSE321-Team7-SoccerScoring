@@ -1,10 +1,14 @@
-<project name="SocSocre" basedir="." default="run">
+<project name="SocSocre" basedir="." default="build">
     <description>
         Main ANT build file for SocScore.
     </description>
 
-    <target name="run">
+    <target name="build">
         <ant antfile="build-framework.xml" />
+    </target>
+
+    <target name="test">
+
     </target>
 
 </project>
