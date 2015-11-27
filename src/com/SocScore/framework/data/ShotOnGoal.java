@@ -1,7 +1,6 @@
 package com.SocScore.framework.data;
 
-import java.time.*;
-
+import org.joda.time.LocalDateTime;
 /**
  * Object which stores the instance of an attempted shot on a goal.
  */

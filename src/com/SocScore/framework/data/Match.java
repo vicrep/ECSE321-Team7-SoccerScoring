@@ -1,7 +1,8 @@
 package com.SocScore.framework.data;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+import org.joda.time.LocalDateTime;
+import org.joda.time.Minutes;
+
 import java.util.Comparator;
 
 /**
@@ -138,7 +139,7 @@ public class Match {
      * @return Returns the elapsed time in minutes of a match currently happening.
      */
     public long getElapsedTime() {
-        if(isActive) return ChronoUnit.MINUTES.between(startTime, LocalDateTime.now());
+        if(isActive) return Minutes.minutesBetween(startTime, new LocalDateTime()).getMinutes();
         else return getTotalTime();
     }
 
@@ -147,7 +148,7 @@ public class Match {
      */
     public long getTotalTime() {
         if(isActive) return getElapsedTime();
-        else return ChronoUnit.MINUTES.between(startTime, endTime);
+        else return Minutes.minutesBetween(startTime, new LocalDateTime()).getMinutes();
     }
 
     //comparators for sorting

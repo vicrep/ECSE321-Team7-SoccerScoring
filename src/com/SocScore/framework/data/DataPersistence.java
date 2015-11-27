@@ -2,13 +2,12 @@ package com.SocScore.framework.data;
 
 import com.SocScore.framework.AnalysisViewer;
 import com.SocScore.framework.LeagueInput;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
+import org.joda.time.LocalDateTime;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +43,7 @@ public class DataPersistence {
         xstream.omitField(Player.class, "currentGoals");
         xstream.omitField(Match.class, "team1");
         xstream.omitField(Match.class, "team2");
+        xstream.omitField(Match.class, "isActive");
     }
 
     /**
@@ -116,7 +116,7 @@ class LocalDateTimeConverter extends AbstractSingleValueConverter {
 
     public Object fromString(String str) {
         try {
-            return LocalDateTime.parse(str);
+            return new LocalDateTime(str);
         }
         catch (Exception e) {
             return null;

@@ -3,6 +3,7 @@ package com.SocScore.framework.data;
 import com.SocScore.framework.scorekeeper.ScoreKeeper;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -67,9 +68,9 @@ public class LeagueAnalysis {
      */
     public static void rankLeague(TeamRankType type) {
         switch(type) {
-            case ID: league.sort(Team.rankByID);
-            case TEAM_SCORE: league.sort(Team.rankByScore);
-            case TOTAL_GOALS: league.sort(Team.rankByTotalGoals);
+            case ID: Collections.sort(league, Team.rankByID);
+            case TEAM_SCORE: Collections.sort(league, Team.rankByScore);
+            case TOTAL_GOALS: Collections.sort(league, Team.rankByTotalGoals);
             default: break;
         }
     }
@@ -78,14 +79,14 @@ public class LeagueAnalysis {
      * Sorts {@link Match} in the league by their ID (in increasing order).
      */
     public static void sortMatchesByID() {
-        matches.sort(Match.sortByID);
+        Collections.sort(matches, Match.sortByID);
     }
 
     /**
      * Sorts {@link Match} in the league by their date (newest to oldest).
      */
     public static void sortMatchesByDate() {
-        matches.sort(Match.sortByTime);
+        Collections.sort(matches, Match.sortByTime);
     }
 
     /**

@@ -4,8 +4,7 @@ import com.SocScore.framework.data.LeagueAnalysis;
 import com.SocScore.framework.data.Match;
 import com.SocScore.framework.data.Team;
 
-import java.time.LocalDateTime;
-
+import org.joda.time.LocalDateTime;
 /**
  * Object which manages creating, editing, and saving of matches in a batch context.
  * Also allows to edit matches stored in {@link LeagueAnalysis} (i.e. matches which have already happened)

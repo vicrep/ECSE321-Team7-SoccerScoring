@@ -2,7 +2,7 @@ package com.SocScore.framework.scorekeeper;
 
 import com.SocScore.framework.data.*;
 
-import java.time.LocalDateTime;
+import org.joda.time.LocalDateTime;
 
 /**
  * Object which manages creating, controlling, and saving matches in a live context
@@ -28,7 +28,7 @@ public class LiveInput extends ScoreKeeper {
      * @throws RuntimeException Throws an exception if the match has already started, or has ended.
      */
     public void startMatch() throws RuntimeException {
-        currentMatch.startMatch(LocalDateTime.now());
+        currentMatch.startMatch(new LocalDateTime());
     }
 
     /**
@@ -38,7 +38,7 @@ public class LiveInput extends ScoreKeeper {
      * @throws RuntimeException Throws an exception if the match has not been started with {@link #startMatch()}
      */
     public void endMatch() throws RuntimeException {
-        currentMatch.endMatch(LocalDateTime.now());
+        currentMatch.endMatch(new LocalDateTime());
         transferMatchToLeague(getCurrentMatch());
     }
 
@@ -46,13 +46,13 @@ public class LiveInput extends ScoreKeeper {
      * Calls {@link #shoots(int, boolean, LocalDateTime)} with the current time
      */
     public void shoots(int playerID, boolean scored) throws RuntimeException {
-        shoots(playerID, scored, LocalDateTime.now());
+        shoots(playerID, scored, new LocalDateTime());
     }
 
     /**
      * Calls {@link #addInfraction(int, InfractionType, LocalDateTime)} with the current time
      */
     public void addInfraction(int playerID, InfractionType type) {
-        addInfraction(playerID, type, LocalDateTime.now());
+        addInfraction(playerID, type, new LocalDateTime());
     }
 }
