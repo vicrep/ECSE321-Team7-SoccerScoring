@@ -11,9 +11,9 @@ public class AccessManager {
 
     private static boolean isAuth = false;
     private static final int PIN = 1234;
-    private static final AnalysisViewer leagueInput = new LeagueInput();
-    private static final AnalysisViewer liveInput = new LiveInput();
-    private static final AnalysisViewer batchInput = new BatchInput();
+    private static final LeagueInput leagueInput = new LeagueInput();
+    private static final LiveInput liveInput = new LiveInput();
+    private static final BatchInput batchInput = new BatchInput();
 
     /**
      * Compares input against a stored access code, and sets user as Authenticated if they match.
@@ -52,7 +52,7 @@ public class AccessManager {
             case LEAGUE_INPUT: return leagueInput;
             case LIVE_INPUT: return liveInput;
             case BATCH_INPUT: return batchInput;
-            default: return new AnalysisViewer();
+            default: return null;
         }
     }
 }
