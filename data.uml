@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.SocScore.framework.data</OriginalElement>
+  <nodes>
+    <node x="712.25" y="0.0">com.SocScore.framework.data.LocalDateTimeConverter</node>
+    <node x="430.25" y="79.0">com.SocScore.framework.data.ShotOnGoal</node>
+    <node x="739.25" y="79.0">com.SocScore.framework.data.DataPersistence</node>
+    <node x="243.00000000000003" y="1209.0">com.SocScore.framework.data.LeagueAnalysis</node>
+    <node x="0.0" y="888.0">com.SocScore.framework.data.Match</node>
+    <node x="230.25000000000003" y="0.0">com.SocScore.framework.data.InfractionType</node>
+    <node x="1118.25" y="0.0">com.SocScore.framework.data.TeamRankType</node>
+    <node x="173.25000000000003" y="79.0">com.SocScore.framework.data.Infraction</node>
+    <node x="943.25" y="0.0">com.SocScore.framework.data.PlayerRankType</node>
+    <node x="164.00000000000003" y="611.0">com.SocScore.framework.data.Team</node>
+    <node x="241.25000000000003" y="246.0">com.SocScore.framework.data.Player</node>
+    <node x="471.0" y="699.0">com.SocScore.framework.data.PlayerAnalysis</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.SocScore.framework.data.LeagueAnalysis" target="com.SocScore.framework.data.Match">
+      <point x="-32.25" y="-14.5" />
+      <point x="275.25" y="1184.0" />
+      <point x="201.5" y="1184.0" />
+      <point x="0.0" y="135.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.LeagueAnalysis" target="com.SocScore.framework.data.Team">
+      <point x="32.25" y="-14.5" />
+      <point x="339.75" y="1184.0" />
+      <point x="413.5" y="1184.0" />
+      <point x="413.5" y="863.0" />
+      <point x="379.25" y="863.0" />
+      <point x="71.75" y="113.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.DataPersistence" target="com.SocScore.framework.data.LocalDateTimeConverter">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Infraction" target="com.SocScore.framework.data.InfractionType">
+      <point x="0.0" y="-58.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Team" target="com.SocScore.framework.data.Player">
+      <point x="0.0" y="-113.5" />
+      <point x="307.5" y="586.0" />
+      <point x="330.75" y="586.0" />
+      <point x="-89.5" y="157.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Match" target="com.SocScore.framework.data.Team">
+      <point x="0.0" y="-135.5" />
+      <point x="201.5" y="863.0" />
+      <point x="235.75000000000003" y="863.0" />
+      <point x="-71.75" y="113.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Player" target="com.SocScore.framework.data.Infraction">
+      <point x="-134.25" y="-157.5" />
+      <point x="286.0" y="221.0" />
+      <point x="232.50000000000003" y="221.0" />
+      <point x="-59.25" y="58.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.Player" target="com.SocScore.framework.data.ShotOnGoal">
+      <point x="44.75" y="-157.5" />
+      <point x="465.0" y="221.0" />
+      <point x="489.5" y="221.0" />
+      <point x="-59.25" y="58.5" />
+    </edge>
+    <edge source="com.SocScore.framework.data.PlayerAnalysis" target="com.SocScore.framework.data.Player">
+      <point x="0.0" y="-25.5" />
+      <point x="533.0" y="586.0" />
+      <point x="509.75" y="586.0" />
+      <point x="89.5" y="157.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.595389507154213" x="623.0" y="619.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
