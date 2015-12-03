@@ -55,4 +55,8 @@ public class AccessManager {
             default: return null;
         }
     }
+
+    public static boolean getAuthStatus() {
+        return isAuth;
+    }
 }

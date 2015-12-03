@@ -56,7 +56,8 @@ public class LeagueInput extends AnalysisViewer {
 //            test.addNewPlayerToTeam("Player " + (i+10), 1);
 //        }
 //
-//        BatchInput testBatch = new BatchInput();
+//        AccessManager.authenticate(1234);
+//        BatchInput testBatch = (BatchInput) AccessManager.setInputType(ScoreKeeperType.BATCH_INPUT);
 //
 //        testBatch.createMatch(LeagueAnalysis.findTeam(0), LeagueAnalysis.findTeam(1), new LocalDateTime(), new LocalDateTime().plusMinutes(80));
 //        try {
