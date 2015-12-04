@@ -1,0 +1,15 @@
+p, div, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav-logo {
+    height: 40px;
+}
+
+.container {
+    padding-top: 75px;
+}
+
+.nav-bg {
+    background-color: #DCEDC8;
+}

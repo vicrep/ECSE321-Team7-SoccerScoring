@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="40a6191f-dbc9-4e9e-8a14-a44040f0d0cb" name="SocScore Resin" url="http://localhost:8080/">
+        <fileTransfer mountedRoot="/Library/Resin" accessType="MOUNT" />
+      </webServer>
+      <webServer id="47d2a01f-204a-49b1-8bfb-a5c7d8e60349" name="Koding VM" url="http://vicrep.koding.com:8080/SocScore/">
+        <fileTransfer host="vicrep.koding.io" port="21" rootFolder="/home/vicrep/Resin" password="dfe1dfc5dfcedf9adf9fdf9bdf98df93df9e" username="vicrep" />
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -102,7 +102,6 @@ public class LeagueAnalysis {
                 searchList.add(match);
             }
         }
-        if(searchList.isEmpty()) throw new RuntimeException("Could not find any matches for Team ID: " + teamID);
         return searchList;
     }
 
@@ -141,8 +140,14 @@ public class LeagueAnalysis {
      * @see Match#resetTeams()
      */
     public static void loadLeagueFromDisk() {
-        league = DataPersistence.loadFromDisk("league.xml");
-        matches = DataPersistence.loadFromDisk("matches.xml");
+        try{
+            league = DataPersistence.loadFromDisk("league.xml");
+            matches = DataPersistence.loadFromDisk("matches.xml");
+        }
+        catch(Exception e) {
+            return;
+        }
+
         for(Team team: league) {
             team.resetPlayers();
         };
