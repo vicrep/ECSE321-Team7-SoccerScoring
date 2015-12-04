@@ -22,6 +22,7 @@ The framework is written purely in Java 7, and encapsulates all the control and 
 The web application is written in PHP, and uses a special server system called [Quercus](http://quercus.caucho.com), which allows for the use of java classes and methods directly in PHP code. Though Quercus can be installed on any Java server (i.e. Tomcat), we recommend using [Resin](http://caucho.com), as it implements Quercus natively.
 
 **Installation Guide**
+*NOTE: Please ensure that no other servers are running on port 8080 before proceeding.*
 
 1.  [Download Resin](http://caucho.com/download/resin-pro-4.0.46.tar.gz), and extract the tar.gz file.
 2.  Using your terminal, navigate to the folder extracted from the download.
