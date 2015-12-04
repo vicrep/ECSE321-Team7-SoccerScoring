@@ -32,5 +32,5 @@ The web application is written in PHP, and uses a special server system called [
     * Create a new folder in `YOUR_RESIN_FOLDER/webapps` called `SocScore`, and copy all contents from [`src/com/SocScore/web`](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/src/com/SocScore/web) to that folder you just created.
 5.  Then from the main Resin folder in terminal, run `bin/resin.sh start` to initialize the server.
 6.  You will then be able to access the web-application by navigating to [htpp://localhost:8080/SocScore/](http://localhost:8080/SocScore/)
-7.  When you are done, you can shut down the server using the command `/bin/resin.sh stop`
+7.  When you are done, you can shut down the server using the command `bin/resin.sh stop`
 
