@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_blurry"
+    android:gravity="center|top"
+    android:id="@+id/live_input_dialog_layout"
+    android:padding="16dp">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/close_live_dialog"
+        android:onClick="close_live_dialog"
+        android:background="@drawable/close_pop_up_gray"
+        android:layout_gravity="right|top"
+        android:layout_margin="16dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
+        android:id="@+id/list_view_score"
+        android:background="@drawable/sign_in_background">
+
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/sign_in_background">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Team 1"
+            android:id="@+id/et_team1"
+            android:inputType="number"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_team2"
+            android:hint="ID Team 2"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a new match"
+        android:onClick="createNewMatch"
+        android:id="@+id/create_new_match_button_live_dialog"
+        android:background="#d28c38" />
+
+</LinearLayout>

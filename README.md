@@ -40,4 +40,4 @@ The web application is written in PHP, and uses a special server system called [
 #### Android App
 **Installation Guide**
 
-The app apk is located [here](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build). Download it and run it directly on an android device or you can run it on an emulator available online such as [bluestacks](http://www.bluestacks.com)
+The app apk is located [here](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build). Download it and run it directly on an android device or you can run it on an emulator available online such as [bluestacks](http://www.bluestacks.com). The source code of the android app is accessible from [here](https://github.com/lucien-george/ECSE321-Team7-SoccerScoring/tree/master/src/com/SocScore/Android).

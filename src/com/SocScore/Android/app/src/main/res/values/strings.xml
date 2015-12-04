@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">ScoreKeeping Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="link_error_forgotten_password"><a href="https://www.mcgill.ca">Forgot your password?</a></string>
+    <string name="title_activity_live_input">LiveInputActivity</string>
+    <string name="title_activity_batch_input">BatchInputActivity</string>
+    <string-array name="liveInput">
+        <item>Live input</item>
+        <item>Create match</item>
+        <item>Access live match</item>
+    </string-array>
+    <string-array name="batchInput">
+        <item>Batch input</item>
+        <item>Create match</item>
+        <item>Access league analysis</item>
+        <item>Access player analysis</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_live_match">LiveMatchActivity</string>
+    <string name="title_activity_analysis_viewer">AnalysisViewerActivity</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+    <string name="title_activity_league_input">LeagueInputActivity</string>
+    <string name="title_activity_analysis_viewer_team_id">AnalysisViewerTeamIDActivity</string>
+    <string name="title_activity_analysis_viewer_team_score">AnalysisViewerTeamScoreActivity
+    </string>
+    <string name="title_activity_analysis_viewer_team_goals">AnalysisViewerTeamGoals</string>
+    <string name="title_activity_player_analysis">PlayerAnalysisActivity</string>
+    <string name="title_activity_match_analysis">MatchAnalysisActivity</string>
+    <string name="title_activity_player_by_name">PlayerByNameActivity</string>
+    <string name="title_activity_plsyer_by_id">PlsyerByIDActivity</string>
+    <string name="title_activity_player_by_goals">PlayerByGoalsActivity</string>
+    <string name="title_activity_player_by_yellow_cards">PlayerByYellowCardsActivity</string>
+    <string name="title_activity_player_by_red_cards">PlayerByRedCardsActivity</string>
+    <string name="title_activity_player_by_penalties">PlayerByPenaltiesActivity</string>
+    <string name="title_activity_match_by_id">MatchByIDActivity</string>
+    <string name="title_activity_match_by_date">MatchByDateActivity</string>
+    <string name="title_activity_batch_input_match">BatchInputMatchActivity</string>
+</resources>
