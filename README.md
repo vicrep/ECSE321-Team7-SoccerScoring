@@ -27,14 +27,15 @@ The web application is written in PHP, and uses a special server system called [
 
 1.  [Download Resin](http://caucho.com/download/resin-pro-4.0.46.tar.gz), and extract the tar.gz file.
 2.  Using your terminal, navigate to the folder extracted from the download.
-3.  Run `./configure`, followed by `make` and `make install` (if those last two commands don't work, then they aren't necessary)
+3.  Run `sudo ./configure`, followed by `sudo make` and `sudo make install` (if those last two commands don't work, then they aren't necessary). 
 4.  Copy the following files in the following locations
     * Copy all files in this repo's [`lib/XStream folder`](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/lib/XStream) to `YOUR_RESIN_FOLDER/webapp-jars`
     * Copy the file [`build/lib/socscore-framework.jar`](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build/lib) to `YOUR_RESIN_FOLDER/webapp-jars`
     * Create a new folder in `YOUR_RESIN_FOLDER/webapps` called `SocScore`, and copy all contents from [`src/com/SocScore/web`](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/src/com/SocScore/web) to that folder you just created.
 5.  Then from the main Resin folder in terminal, run `bin/resin.sh start` to initialize the server.
-6.  You will then be able to access the web-application by navigating to [htpp://localhost:8080/SocScore/](http://localhost:8080/SocScore/)
-7.  When you are done, you can shut down the server using the command `bin/resin.sh stop`
+6.  To initialize the data for the app (required), navigate to [htpp://localhost:8080/SocScore/test.php](http://localhost:8080/SocScore/test.php). If this loads a blank page, then the initialization has been successful.
+7.  You will then be able to access the web-application by navigating to [htpp://localhost:8080/SocScore/](http://localhost:8080/SocScore/)
+8.  When you are done, you can shut down the server using the command `bin/resin.sh stop`
 
 #### Android App
 **Installation Guide**
