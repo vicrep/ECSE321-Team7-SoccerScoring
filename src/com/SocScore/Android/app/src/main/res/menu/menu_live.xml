@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.SocScore.android.app.MainActivity">
+
+    <item android:id="@+id/action_main"
+        android:title="Main activity"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_league"
+        android:title="League input"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_batch"
+        android:title="Batch input"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_analysis_viewer"
+        android:title="Analysis viewer"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+</menu>

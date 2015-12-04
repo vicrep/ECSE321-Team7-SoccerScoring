@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="120dp"
+    tools:context="com.SocScore.android.app.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/league_input"
+        android:text="League input"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="accessLeagueInput"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live Input"
+            android:backgroundTint="@android:color/transparent"
+            android:textStyle="bold"
+            android:onClick="enterLiveInput"
+            android:id="@+id/live_input_button"
+            android:layout_gravity="left" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batch Input"
+            android:backgroundTint="@android:color/transparent"
+            android:textStyle="bold"
+            android:onClick="enterBatchInput"
+            android:id="@+id/batch_input_button"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/analysis_viewer"
+        android:text="Analysis viewer"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="accessAnalysisViewer"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

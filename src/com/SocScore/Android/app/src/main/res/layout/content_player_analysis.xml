@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.SocScore.android.app.PlayerAnalysisActivity"
+    tools:showIn="@layout/activity_player_analysis">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/close_player_analysis"
+        android:onClick="closePlayerAnalysis"
+        android:background="@drawable/close_pop_up_gray"
+        android:layout_gravity="top|right"
+        android:layout_margin="16dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/player_ranks"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rank by name"
+            android:id="@+id/rank_player_by_name"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rank by ID"
+            android:id="@+id/rank_player_by_id"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rank by Goals"
+            android:id="@+id/rank_player_by_goals"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rank by yellow cards"
+            android:id="@+id/rank_player_by_yellow"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rank by red cards"
+            android:id="@+id/rank_player_by_red"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rank by penalties"
+            android:id="@+id/rank_player_by_penalties"/>
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Players ranking"
+        android:id="@+id/btn_player_ranking"
+        android:background="@drawable/sign_in_background"
+        android:onClick="rankPlayers"/>
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.SocScore.android.app">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:ignore="HardcodedDebugMode">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".BatchInputActivity" />
+        <activity
+            android:name=".LiveMatchActivity"
+            android:label="@string/title_activity_live_match"
+            android:theme="@style/AppTheme" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".AnalysisViewerActivity"
+            android:label="@string/title_activity_analysis_viewer"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ListViewActivity"
+            android:label="@string/title_activity_list_view"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LeagueInputActivity"
+            android:label="@string/title_activity_league_input"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AnalysisViewerTeamIDActivity"
+            android:label="@string/title_activity_analysis_viewer_team_id"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AnalysisViewerTeamScoreActivity"
+            android:label="@string/title_activity_analysis_viewer_team_score"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AnalysisViewerTeamGoalsActivity"
+            android:label="@string/title_activity_analysis_viewer_team_goals"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerAnalysisActivity"
+            android:label="@string/title_activity_player_analysis"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MatchAnalysisActivity"
+            android:label="@string/title_activity_match_analysis"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerByNameActivity"
+            android:label="@string/title_activity_player_by_name"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerByIDActivity"
+            android:label="@string/title_activity_plsyer_by_id"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerByGoalsActivity"
+            android:label="@string/title_activity_player_by_goals"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerByYellowCardsActivity"
+            android:label="@string/title_activity_player_by_yellow_cards"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerByRedCardsActivity"
+            android:label="@string/title_activity_player_by_red_cards"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PlayerByPenaltiesActivity"
+            android:label="@string/title_activity_player_by_penalties"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MatchByIDActivity"
+            android:label="@string/title_activity_match_by_id"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MatchByDateActivity"
+            android:label="@string/title_activity_match_by_date"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".BatchInputMatchActivity"
+            android:label="@string/title_activity_batch_input_match"
+            android:theme="@style/AppTheme"></activity>
+    </application>
+
+</manifest>

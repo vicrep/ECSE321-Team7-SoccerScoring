@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-1788f7b2a54c5448689f36974fdaeadf289d834a.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9/db8dd9d75280b1d1d9587ed0d39b4108d0e655e9/joda-time-2.9-no-tzdb.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="db8dd9d75280b1d1d9587ed0d39b4108d0e655e9">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/joda-time-2.9-no-tzdb-436ad216f8ea757582c9595047c4957e33bf35b3.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-4ec787e6414b5f79d36ce5199972e4de5ed94b75.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/.gradle/caches/modules-2/files-2.1/com.thoughtworks.xstream/xstream/1.4.7/bce3282142b63068260f021fcbe48b72e8d71a1a/xstream-1.4.7.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="bce3282142b63068260f021fcbe48b72e8d71a1a">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/xstream-1.4.7-39e40ea250c72ae5d049a916fe202cd8c2aa2421.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-a269a535275f5442a5f9b3f794888c3370539578.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-04020cf10eb2c25e9c9e87cadb8906f8761df13c.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-d2418cf0ebdf63a2722a89460b3c2afd0b790848.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.9.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="dc6c5f4bb34315c98476469344d481c8e3ca90ad">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-83043b269947aa2f339f5311a53fe6f6b0382be3.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/.gradle/caches/modules-2/files-2.1/xpp3/xpp3_min/1.1.4c/19d4e90b43059058f6e056f794f0ea4030d60b86/xpp3_min-1.1.4c.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="19d4e90b43059058f6e056f794f0ea4030d60b86">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/xpp3_min-1.1.4c-f75fc41eeb542bcf70e916f35cb17fe262dda884.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-15aa17fc3ce0c42d08d73f010f580514447a5f68.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-290bbe429347bdbbca2d2ec34fa8de0698d406cc.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8465fad6dd05b954b82bd5ff22edd80992808561">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-60970911cee3825ac1e9db2cc23d4a9c4ee6269d.jar" />
+    </item>
+    <item
+        jar="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/LuLu/IdeaProjects/SocScore-Android/app/build/intermediates/pre-dexed/debug/classes-af89e5982c762c337f415b42dfe379dffe1c4ad8.jar" />
+    </item>
+
+</items>
