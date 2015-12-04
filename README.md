@@ -44,4 +44,4 @@ The app apk is located [here](https://github.com/vicrep/ECSE321-Team7-SoccerScor
 
 #### Java Swing App
 
-The Java Swing App uses the same framework as the Web App and Android App (see above for link to framework). The source code can be found in the following link [src/com/SocScore/javaswing](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/src/com/SocScore/javaswing), the executable of the Java Swing App can be found in hte following link [build](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build)
+The Java Swing App uses the same framework as the Web App and Android App (see above for link to framework). The source code can be found in the following link [src/com/SocScore/javaswing](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/src/com/SocScore/javaswing), the executable of the Java Swing App (SocScore-JavaSwing.jar) can be found  [here](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build).
