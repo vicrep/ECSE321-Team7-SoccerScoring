@@ -64,4 +64,7 @@ public class AnalysisViewer {
     public List getMatchesForTeam(int teamID) {
         return LeagueAnalysis.getMatchesForTeam(teamID);
     }
+    public List getPlayers() {
+        return PlayerAnalysis.getPlayers();
+    }
 }

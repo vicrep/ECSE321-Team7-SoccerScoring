@@ -77,7 +77,7 @@ public class PlayerAnalysis {
     /**
      * @return Returns the list of players in the league.
      */
-    public List getPlayers() {
+    public static List getPlayers() {
         return players;
     }
 }

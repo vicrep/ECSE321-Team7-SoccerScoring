@@ -12,7 +12,7 @@ import java.util.Comparator;
  * @see com.SocScore.framework.scorekeeper.BatchInput
  */
 public class Match {
-    private static int count = 0;
+    private static int count = LeagueAnalysis.getMatches().size();
 
     private final int MATCH_ID = count++;
     private Team team1;

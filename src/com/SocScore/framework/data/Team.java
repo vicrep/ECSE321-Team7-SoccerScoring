@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+
 /**
  * Object which stores all information related to a single team.
  */
 public class Team {
-    private static int count = 0;
+    private static int count = LeagueAnalysis.getLeague().size();
 
     private final int TEAM_ID = count++;
 

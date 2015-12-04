@@ -9,7 +9,7 @@ import java.util.List;
  * Object representing a single player, and all their relevant fields.
  */
 public class Player {
-    private static int count = 0;
+    private static int count = PlayerAnalysis.getPlayers().size();
 
     private final int PLAYER_ID = count++;
     private final String PLAYER_NAME;
