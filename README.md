@@ -34,3 +34,6 @@ The web application is written in PHP, and uses a special server system called [
 6.  You will then be able to access the web-application by navigating to [htpp://localhost:8080/SocScore/](http://localhost:8080/SocScore/)
 7.  When you are done, you can shut down the server using the command `bin/resin.sh stop`
 
+#### Android App
+**Installation Guide**
+The app apk is located [here](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build). Download it and run it directly on an android device or you can run it on an emulator available online such as [bluestacks](http://www.bluestacks.com)
