@@ -38,6 +38,9 @@ The web application is written in PHP, and uses a special server system called [
 8.  When you are done, you can shut down the server using the command `bin/resin.sh stop`
 
 #### Android App
+
+This android application implements the SocScore framework into a standalone android application. Note that this app was optimized for mobile deployment, so you may experience layout issues if run on a tablet.
+
 **Installation Guide**
 
 The app apk is located [here](https://github.com/vicrep/ECSE321-Team7-SoccerScoring/tree/master/build). Download it and run it directly on an android device or you can run it on an emulator available online such as [bluestacks](http://www.bluestacks.com)
